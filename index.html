@@ -3,114 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIONS S.G. | Seguridad y Electricidad Quito</title>
+    <title>LIONS S.G. | Seguridad y Energía</title>
     <style>
-        :root { --oro: #D4AF37; --oro-br: #FFD700; --negro: #0a0a0a; --gris: #161616; --blanco: #ffffff; }
+        :root { --oro: #D4AF37; --oro-br: #FFD700; --negro: #000; --gris: #121212; --blanco: #fff; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--negro); color: var(--blanco); line-height: 1.6; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--negro); color: var(--blanco); text-align: center; }
         
         header { 
-            background: rgba(0,0,0,0.95); padding: 15px 5%; display: flex; justify-content: space-between; 
-            align-items: center; border-bottom: 2px solid var(--oro); position: sticky; top: 0; z-index: 1000;
+            padding: 20px; border-bottom: 2px solid var(--oro); background: rgba(0,0,0,0.9);
+            position: sticky; top: 0; z-index: 100;
         }
-        .logo-img { height: 65px; width: auto; transition: 0.3s; }
         
-        .hero { 
-            height: 65vh; text-align: center; display: flex; flex-direction: column; justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070') center/cover;
-            padding: 20px;
+        .logo-img { 
+            height: 120px; /* Tamaño ideal para que luzca profesional */
+            width: auto; 
+            margin-bottom: 10px;
         }
-        .hero h1 { color: var(--oro-br); font-size: 2.8rem; text-transform: uppercase; text-shadow: 2px 2px 10px #000; }
+
+        .hero { padding: 60px 20px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070') center/cover; }
+        .hero h1 { color: var(--oro-br); font-size: 2.2rem; text-transform: uppercase; margin-bottom: 15px; }
         
         .btn-wa { 
-            background: #25d366; color: white; padding: 18px 35px; border-radius: 50px; 
-            text-decoration: none; font-weight: bold; display: inline-block; margin-top: 25px; box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+            background: #25d366; color: white; padding: 15px 30px; border-radius: 50px; 
+            text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px;
         }
 
-        .section { padding: 80px 5%; max-width: 1200px; margin: auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: var(--gris); padding: 35px; border-radius: 15px; border: 1px solid #333; transition: 0.4s; position: relative; overflow: hidden; }
-        .card:hover { border-color: var(--oro); transform: translateY(-10px); }
-        .card h3 { color: var(--oro); margin-bottom: 20px; text-transform: uppercase; font-size: 1.4rem; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        .card ul { list-style: none; }
-        .card li { margin-bottom: 12px; display: flex; justify-content: space-between; border-bottom: 1px dashed #222; padding-bottom: 5px; }
-        .card li span { color: var(--oro-br); font-weight: bold; font-size: 0.85rem; }
+        .services { padding: 50px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: var(--gris); padding: 25px; border-radius: 15px; border: 1px solid #333; }
+        .card h3 { color: var(--oro); margin-bottom: 15px; text-transform: uppercase; }
+        .card ul { list-style: none; text-align: left; font-size: 0.9rem; }
+        .card li { margin-bottom: 8px; border-bottom: 1px solid #222; padding-bottom: 5px; display: flex; justify-content: space-between; }
+        .card li span { color: var(--oro-br); }
 
-        .warranty { background: #080808; padding: 60px 5%; text-align: center; border-top: 1px solid #222; }
-        .w-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 30px; }
-        .w-item h4 { color: var(--oro); margin-bottom: 10px; font-size: 1.2rem; }
-
-        footer { padding: 60px 5%; text-align: center; background: #000; border-top: 2px solid var(--oro); }
-        .contact-f { margin-bottom: 20px; color: var(--oro-br); font-weight: bold; }
+        footer { padding: 40px; border-top: 1px solid var(--oro); font-size: 0.8rem; color: #666; }
     </style>
 </head>
 <body>
 
     <header>
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <img src="logo.png" alt="Lions SG" class="logo-img">
-            <div style="line-height: 1;">
-                <span style="color: var(--oro); font-weight: bold; font-size: 1.4rem;">LIONS S.G.</span><br>
-                <small style="color: #fff; font-size: 0.7rem; letter-spacing: 1px;">SOLUCIONES TÉCNICAS</small>
-            </div>
-        </div>
-        <div style="color: var(--oro); font-weight: 600;" class="hide-mobile">📍 Quito, Ecuador</div>
+        <img src="logo.png" alt="LIONS S.G." class="logo-img">
+        <h2 style="color: var(--oro); letter-spacing: 2px;">LIONS S.G.</h2>
+        <p style="font-size: 0.8rem; letter-spacing: 1px;">SOLUCIONES TÉCNICAS</p>
+        <p style="color: var(--oro-br); margin-top: 5px;">📍 Quito - Pichincha</p>
     </header>
 
     <section class="hero">
-        <h1>Ingeniería en Seguridad y Energía</h1>
-        <p style="font-size: 1.2rem; margin-top: 10px;">Instalaciones Profesionales Certificadas en todo Pichincha.</p>
-        <a href="https://wa.me/593969425863?text=Hola%20Lions%20SG,%20solicito%20asesoría%20técnica." class="btn-wa">Contactar a Soporte Técnico 📲</a>
+        <h1>Seguridad y Energía con Precisión</h1>
+        <p>Especialistas en Seguridad Electrónica y Sistemas Eléctricos</p>
+        <a href="https://wa.me/593969425863" class="btn-wa">Solicitar Servicio Técnico 📲</a>
     </section>
 
-    <section class="section">
-        <h2 style="text-align: center; color: var(--oro); font-size: 2.2rem; margin-bottom: 50px;">NUESTRO CATÁLOGO</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Seguridad</h3>
-                <ul>
-                    <li>Cámaras Hikvision/Dahua <span>KIT PROFESIONAL</span></li>
-                    <li>Cercas Eléctricas <span>ALTO VOLTAJE</span></li>
-                    <li>Alarmas DSC Neo <span>CONTROL APP</span></li>
-                    <li>Módulos Hagroy <span>DOMÓTICA IoT</span></li>
-                </ul>
-            </div>
-            <div class="card" style="border-width: 2px; border-color: var(--oro);">
-                <h3>Electricidad</h3>
-                <ul>
-                    <li>Redes Eléctricas <span>NORMA NEC</span></li>
-                    <li>Tableros de Control <span>INDUSTRIAL</span></li>
-                    <li>Puesta a Tierra <span>CERTIFICADA</span></li>
-                    <li>Mantenimiento Preventivo <span>TÉCNICO</span></li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Accesos</h3>
-                <ul>
-                    <li>Biométricos ZKTeco <span>HUELLA/ROSTRO</span></li>
-                    <li>Video Porteros <span>FULL HD</span></li>
-                    <li>Motores de Garaje <span>ALTO TRÁFICO</span></li>
-                    <li>Cerraduras Smart <span>SIN LLAVES</span></li>
-                </ul>
-            </div>
+    <section class="services">
+        <div class="card">
+            <h3>Seguridad</h3>
+            <ul>
+                <li>Cámaras Hikvision <span>PRO</span></li>
+                <li>Cercas Eléctricas <span>SEGURAS</span></li>
+                <li>Alarmas DSC Neo <span>APP</span></li>
+            </ul>
         </div>
-    </section>
-
-    <section class="warranty">
-        <h2>EL RESPALDO DE UN LEÓN</h2>
-        <div class="w-grid">
-            <div class="w-item"><h4>✅ Certificados</h4><p>Avalados por las marcas líderes del mercado de seguridad.</p></div>
-            <div class="w-item"><h4>🛡️ Garantía Real</h4><p>Respaldo técnico en materiales y mano de obra garantizada.</p></div>
-            <div class="w-item"><h4>🔧 Soporte 24/7</h4><p>Atención prioritaria para sistemas críticos en todo Quito.</p></div>
+        <div class="card" style="border-color: var(--oro);">
+            <h3>Electricidad</h3>
+            <ul>
+                <li>Redes Eléctricas <span>NORMA NEC</span></li>
+                <li>Tableros Control <span>INDUSTRIAL</span></li>
+                <li>Mantenimiento <span>TÉCNICO</span></li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Accesos</h3>
+            <ul>
+                <li>Biométricos <span>ZKTeco</span></li>
+                <li>Motores Garaje <span>AUTO</span></li>
+                <li>Cerraduras <span>SMART</span></li>
+            </ul>
         </div>
     </section>
 
     <footer>
-        <div class="contact-f">📍 QUITO - PICHINCHA | 📞 0969425863</div>
-        <p>LIONS S.G. SOLUCIONES TÉCNICAS</p>
-        <div style="font-size: 0.8rem; color: #444; margin-top: 20px;">
-            &copy; 2026 | Excelencia Técnica para Josué - Manuelito Toys.
-        </div>
+        <p><strong>LIONS S.G. SOLUCIONES TÉCNICAS</strong></p>
+        <p>📞 0969425863 | Quito, Ecuador</p>
+        <p style="margin-top: 20px;">&copy; 2026 | Desarrollado para Josué.</p>
     </footer>
 
 </body>
