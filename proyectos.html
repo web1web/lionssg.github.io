@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Proyectos | Lions S.G.</title>
+    <style>
+        :root { --oro: #D4AF37; --negro: #0a0a0a; --gris: #1a1a1a; --blanco: #fff; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--negro); color: var(--blanco); margin: 0; padding: 20px; }
+        header { text-align: center; padding: 40px 0; border-bottom: 2px solid var(--oro); margin-bottom: 30px; }
+        
+        .galeria-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            max-width: 1200px; 
+            margin: auto; 
+        }
+
+        .proyecto-card { 
+            background: var(--gris); 
+            border-radius: 10px; 
+            overflow: hidden; 
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .proyecto-card:hover { border-color: var(--oro); transform: translateY(-5px); }
+
+        /* Espacio para la foto */
+        .foto-placeholder { 
+            width: 100%; 
+            height: 200px; 
+            background: #222; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            color: #444;
+            font-weight: bold;
+        }
+
+        .info-proyecto { padding: 20px; }
+        .info-proyecto h3 { color: var(--oro); margin: 0 0 10px 0; font-size: 1.1rem; }
+        .info-proyecto p { color: #ccc; font-size: 0.85rem; line-height: 1.4; }
+        .tag-sector { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+
+        .btn-volver { 
+            display: block; 
+            width: fit-content; 
+            margin: 50px auto; 
+            color: var(--oro); 
+            text-decoration: none; 
+            border: 1px solid var(--oro); 
+            padding: 12px 30px; 
+            border-radius: 50px; 
+            transition: 0.3s;
+        }
+        .btn-volver:hover { background: var(--oro); color: black; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 style="color: var(--oro); letter-spacing: 3px;">PORTAFOLIO DE PROYECTOS</h1>
+        <p style="color: #888;">Trabajos realizados en Quito y Provincia de Pichincha</p>
+    </header>
+
+    <div class="galeria-grid">
+        
+        <div class="proyecto-card">
+            <div class="foto-placeholder">FOTO: INSTALACIÓN CCTV</div>
+            <div class="info-proyecto">
+                <span class="tag-sector">Quito Norte</span>
+                <h3>Cámaras IP Hikvision</h3>
+                <p>Implementación de sistema de vigilancia 4K con respaldo en la nube y configuración de APP remota.</p>
+            </div>
+        </div>
+
+        <div class="proyecto-card">
+            <div class="foto-placeholder">FOTO: CERCO ELÉCTRICO</div>
+            <div class="info-proyecto">
+                <span class="tag-sector">Cumbayá</span>
+                <h3>Protección Perimetral</h3>
+                <p>Instalación de cerco eléctrico de 15,000V con módulo Hagroy para notificación al celular.</p>
+            </div>
+        </div>
+
+        <div class="proyecto-card">
+            <div class="foto-placeholder">FOTO: CONTROL ACCESO</div>
+            <div class="info-proyecto">
+                <span class="tag-sector">Valle de los Chillos</span>
+                <h3>Biometría ZKTeco</h3>
+                <p>Control de asistencia y acceso para oficinas corporativas mediante reconocimiento facial.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="index.html" class="btn-volver">← Regresar a Lions S.G.</a>
+
+</body>
+</html>
