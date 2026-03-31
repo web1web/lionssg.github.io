@@ -3,211 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIONS S.G. | Seguridad y Energía</title>
+    <title>LIONS S.G. | Soluciones Técnicas - Quito</title>
     <style>
-        :root { --oro: #D4AF37; --oro-br: #FFD700; --negro: #000; --gris: #121212; --blanco: #fff; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--negro); color: var(--blanco); text-align: center; }
-        
-        header { 
-            padding: 20px; border-bottom: 2px solid var(--oro); background: rgba(0,0,0,0.9);
-            position: sticky; top: 0; z-index: 100;
-        }
-        
-        .logo-img { 
-            height: 120px; /* Tamaño ideal para que luzca profesional */
-            width: auto; 
-            margin-bottom: 10px;
+        :root {
+            --oro: #D4AF37;
+            --oro-br: #FFD700;
+            --negro: #000000;
+            --gris-oscuro: #0a0a0a;
+            --gris-suave: #111111;
+            --blanco: #ffffff;
         }
 
-        .hero { padding: 60px 20px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070') center/cover; }
-        .hero h1 { color: var(--oro-br); font-size: 2.2rem; text-transform: uppercase; margin-bottom: 15px; }
-        
-        .btn-wa { 
-            background: #25d366; color: white; padding: 15px 30px; border-radius: 50px; 
-            text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--negro); color: var(--blanco); line-height: 1.6; }
 
-        .services { padding: 50px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: var(--gris); padding: 25px; border-radius: 15px; border: 1px solid #333; }
-        .card h3 { color: var(--oro); margin-bottom: 15px; text-transform: uppercase; }
-        .card ul { list-style: none; text-align: left; font-size: 0.9rem; }
-        .card li { margin-bottom: 8px; border-bottom: 1px solid #222; padding-bottom: 5px; display: flex; justify-content: space-between; }
-        .card li span { color: var(--oro-br); }
+        /* Estilos de Navegación y Hero */
+        header { padding: 40px 5%; text-align: center; background: linear-gradient(to bottom, #111, #000); border-bottom: 2px solid var(--oro); }
+        .logo-main { max-width: 120px; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
+        h1 { color: var(--oro); font-size: 2rem; letter-spacing: 2px; text-transform: uppercase; }
+        .subtitle { color: #888; font-size: 0.9rem; margin-top: 5px; }
 
-        footer { padding: 40px; border-top: 1px solid var(--oro); font-size: 0.8rem; color: #666; }
+        /* Secciones Generales */
+        section { padding: 60px 5%; border-bottom: 1px solid #1a1a1a; }
+        .section-title { color: var(--oro); text-align: center; font-size: 1.5rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 3px; }
+
+        /* Grid de Tarjetas de Servicio */
+        .grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: auto; }
+        .card { background: var(--gris-suave); padding: 30px; border-radius: 15px; border: 1px solid #222; transition: 0.3s; text-align: center; }
+        .card:hover { border-color: var(--oro); transform: translateY(-5px); }
+        .card h3 { color: var(--oro); margin-bottom: 15px; }
+        .card ul { list-style: none; color: #ccc; font-size: 0.9rem; margin-bottom: 20px; }
+        .card li { margin-bottom: 8px; }
+        .btn-ver { display: inline-block; padding: 10px 25px; background: var(--oro); color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
+        .btn-ver:hover { background: var(--oro-br); }
+
+        /* Alineación de Testimonios */
+        .testimonios-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; margin: auto; align-items: stretch; }
+        .testimonio-card { flex: 1; min-width: 300px; max-width: 380px; background: var(--gris-suave); padding: 30px; border-radius: 15px; border-top: 3px solid var(--oro); display: flex; flex-direction: column; justify-content: space-between; }
+        .testimonio-text { color: #eee; font-style: italic; font-size: 0.9rem; margin-bottom: 20px; }
+        .testimonio-autor { color: var(--oro-br); font-weight: bold; font-size: 0.85rem; }
+
+        /* Formulario Estilizado */
+        .form-container { max-width: 600px; margin: auto; background: var(--gris-suave); padding: 40px; border-radius: 20px; border: 1px solid #222; }
+        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: #000; border: 1px solid #333; color: #fff; border-radius: 8px; }
+        .btn-enviar { width: 100%; padding: 15px; background: var(--oro); color: #000; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; border-radius: 8px; }
+
+        /* Marcas */
+        .marcas-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; opacity: 0.7; align-items: center; }
+        .marca-tag { font-weight: bold; font-size: 1.1rem; color: #ccc; transition: 0.3s; }
+        .marca-tag:hover { color: var(--oro); opacity: 1; }
+
+        /* Botón Soporte Flotante */
+        .soporte-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.5); z-index: 1000; border: 2px solid #fff; display: flex; align-items: center; gap: 8px; }
     </style>
 </head>
 <body>
 
+    <a href="https://wa.me/593969425863?text=Hola%20Lions%20S.G.,%20necesito%20soporte%20técnico%20urgente." class="soporte-btn">
+        <span>🛠️</span> Soporte Técnico
+    </a>
+
     <header>
-        <img src="logo.png" alt="LIONS S.G." class="logo-img">
-        <h2 style="color: var(--oro); letter-spacing: 2px;">LIONS S.G.</h2>
-        <p style="font-size: 0.8rem; letter-spacing: 1px;">SOLUCIONES TÉCNICAS</p>
-        <p style="color: var(--oro-br); margin-top: 5px;">📍 Quito - Pichincha</p>
+        <img src="logo.png" alt="Lions S.G. Logo" class="logo-main">
+        <h1>Lions S.G. Soluciones Técnicas</h1>
+        <p class="subtitle">Seguridad Electrónica e Ingeniería Eléctrica | Quito - Pichincha</p>
     </header>
 
-    <section class="hero">
-        <h1>Soluciones Tecnicas </h1>
-        <p>Especialistas en Seguridad Electrónica y Sistemas Eléctricos</p>
-        <a href="https://wa.me/593969425863" class="btn-wa">Solicitar Servicio Técnico 📲</a>
-    </section>
-
-    <section class="services">
-        <div class="card">
-            <h3>Seguridad</h3>
-            <ul>
-                <li>Sistema de Intrucion <span>ALARMAS</span></li>
-                <li>Sistema de Video Vigilancia <span>CAMARAS</span></li>
-                <li>Sistema de Incendio<span>FUEGO</span></li>
-       <li>Control de Asistencia<span>PERSONAL</span></li>
-          <li>Video Porteros<span>ACCESO</span></li>         </ul>
-            ​<a href="seguridad.html" class="btn-wa">Ver Catálogo</a>
-        </div>
-        <div class="card" style="border-color: var(--oro);">
-            <h3>Electricidad</h3>
-            <ul>
-                <li>Redes Eléctricas <span> RESIDENCIAL</span></li>
-                <li>Tableros Control <span>COMERCIAL</span></li>
-                <li>Mantenimiento <span>TÉCNICO</span></li>
-            </ul>
-            ​<a href="electricidad.html" class="btn-wa">Ver Catálogo</a>
-        </div>
-        <div class="card">
-            <h3>LINEA BLANCA</h3>
-            <ul>
-                <li>Arreglo <span>Solución</span></li>
-                <li>Mantenimiento<span>Preventivo / Correctivos</span></li>
-                <li>Repuestos<span>Original/Generico</span></li>
-            </ul>
-            ​<a href="acceso.html" class="btn-wa">Ver Catálogo</a>
-        </div>
-    </section>
-<section style="background: #050505; padding: 40px 5%; border-top: 1px solid #222; text-align: center;">
-    <p style="color: var(--oro); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px;">Mantenimiento completo, preventivo y correctivo</p>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 30px; opacity: 0.7;">
-<section style="background: #050505; padding: 60px 5%; border-top: 1px solid #1a1a1a;">
-    <div style="max-width: 600px; margin: auto; background: #111; padding: 40px; border-radius: 20px; border: 1px solid var(--oro); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);">
-        <h2 style="color: var(--oro); text-align: center; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Solicitar Presupuesto</h2>
-        <p style="color: #888; text-align: center; font-size: 0.85rem; margin-bottom: 30px;">Recibe una asesoría técnica gratuita en Quito y Pichincha</p>
-        
-        <form action="https://formspree.io/f/TU_ID_AQUI" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-            <input type="text" name="nombre" placeholder="Tu Nombre Completo" required 
-                style="background: #000; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 8px; outline: none;">
-            
-            <input type="tel" name="whatsapp" placeholder="WhatsApp de Contacto" required 
-                style="background: #000; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 8px;">
-
-            <select name="servicio" style="background: #000; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 8px;">
-                <option value="seguridad">Seguridad Electrónica (Cámaras/Alarmas)</option>
-                <option value="electricidad">Eléctricidas (Residencia/Comercial)</option>
-                <option value="accesos">Control de Accesos / Motores</option>
-                <option value="mantenimiento">Mantenimiento Preventivo</option>
-            </select>
-
-            <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto (ej: Necesito 4 cámaras en el sector de Carcelén)" rows="4" required 
-                style="background: #000; border: 1px solid #333; color: #fff; padding: 12px; border-radius: 8px; resize: none;"></textarea>
-
-            <button type="submit" style="background: var(--oro); color: #000; font-weight: bold; border: none; padding: 15px; border-radius: 8px; cursor: pointer; text-transform: uppercase; transition: 0.3s;"
-                onmouseover="this.style.background='#b3932d'" onmouseout="this.style.background='var(--oro)'">
-                Enviar Solicitud Técnica
-            </button>
-        </form>
-    </div>
-</section>
-
-<section style="background: #000; padding: 80px 5%; text-align: center;">
-    <h2 style="color: var(--oro); font-size: 1.6rem; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 3px; font-weight: bold;">
-        Casos de Éxito en Quito
-    </h2>
-    
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; margin: auto; align-items: stretch;">
-        
-        <div style="flex: 1; min-width: 300px; max-width: 380px; background: #111; padding: 35px; border-radius: 15px; border-top: 3px solid var(--oro); display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; border-bottom: 1px solid #222;">
-            <p style="color: #eee; font-style: italic; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
-                "Excelente trabajo en la instalación de las cámaras Hikvision. El monitoreo desde el celular funciona perfecto. Muy profesionales en Quito."
-            </p>
-            <div>
-                <div style="color: var(--oro-br); font-weight: bold; font-size: 0.9rem; text-transform: uppercase;">Ing. Ricardo M.</div>
-                <div style="color: #555; font-size: 0.75rem; letter-spacing: 1px;">Sector Cumbayá</div>
+    <section>
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="grid-servicios">
+            <div class="card">
+                <h3>Seguridad</h3>
+                <ul>
+                    <li>CCTV Hikvision / Dahua</li>
+                    <li>Cercas Eléctricas Hagroy</li>
+                    <li>Alarmas DSC / Paradox</li>
+                </ul>
+                <a href="seguridad.html" class="btn-ver">Ver Catálogo</a>
+            </div>
+            <div class="card">
+                <h3>Electricidad</h3>
+                <ul>
+                    <li>Tableros de Distribución</li>
+                    <li>Mantenimiento Preventivo</li>
+                    <li>Instalaciones Industriales</li>
+                </ul>
+                <a href="electricidad.html" class="btn-ver">Ver Catálogo</a>
+            </div>
+            <div class="card">
+                <h3>Accesos</h3>
+                <ul>
+                    <li>Biometría ZKTeco</li>
+                    <li>Motores de Garaje</li>
+                    <li>Intercomunicadores</li>
+                </ul>
+                <a href="accesos.html" class="btn-ver">Ver Catálogo</a>
             </div>
         </div>
+    </section>
 
-        <div style="flex: 1; min-width: 300px; max-width: 380px; background: #111; padding: 35px; border-radius: 15px; border-top: 3px solid var(--oro); display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; border-bottom: 1px solid #222;">
-            <p style="color: #eee; font-style: italic; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
-                "Instalaron el cerco eléctrico y la alarma DSC en mi local. Puntuales y con materiales de alta calidad. Recomendados 100%."
-            </p>
-            <div>
-                <div style="color: var(--oro-br); font-weight: bold; font-size: 0.9rem; text-transform: uppercase;">Lucía Carrera</div>
-                <div style="color: #555; font-size: 0.75rem; letter-spacing: 1px;">Centro Norte, Quito</div>
+    <section style="background: #050505;">
+        <div class="form-container">
+            <h2 style="color: var(--oro); text-align: center; margin-bottom: 20px;">Solicitar Presupuesto</h2>
+            <form action="https://formspree.io/f/TU_ID_AQUI" method="POST">
+                <input type="text" name="name" placeholder="Tu Nombre" required>
+                <input type="tel" name="phone" placeholder="WhatsApp" required>
+                <select name="service">
+                    <option value="CCTV">Cámaras / Seguridad</option>
+                    <option value="Electricidad">Electricidad</option>
+                    <option value="Accesos">Control de Accesos</option>
+                </select>
+                <textarea name="message" rows="4" placeholder="Detalles de tu proyecto..."></textarea>
+                <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Clientes Satisfechos</h2>
+        <div class="testimonios-container">
+            <div class="testimonio-card">
+                <p class="testimonio-text">"Excelente instalación de cámaras. Monitoreo remoto perfecto en Quito."</p>
+                <div>
+                    <div class="testimonio-autor">Ing. Ricardo M.</div>
+                    <div style="color: #444; font-size: 0.7rem;">Cumbayá</div>
+                </div>
+            </div>
+            <div class="testimonio-card">
+                <p class="testimonio-text">"Instalaron el cerco eléctrico y alarma DSC. Muy profesionales."</p>
+                <div>
+                    <div class="testimonio-autor">Lucía Carrera</div>
+                    <div style="color: #444; font-size: 0.7rem;">Centro Norte</div>
+                </div>
+            </div>
+            <div class="testimonio-card">
+                <p class="testimonio-text">"Soporte técnico rápido para mis tableros eléctricos. Recomendados."</p>
+                <div>
+                    <div class="testimonio-autor">Javier Torres</div>
+                    <div style="color: #444; font-size: 0.7rem;">Valle de los Chillos</div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <span style="font-weight: bold; font-size: 1.2rem; color: #ccc;">HIKVISION</span>
-        <span style="font-weight: bold; font-size: 1.2rem; color: #ccc;">DAHUA</span>
-        <span style="font-weight: bold; font-size: 1.2rem; color: #ccc;">DSC</span>
-        <span style="font-weight: bold; font-size: 1.2rem; color: #ccc;">EZVIZ</span>
-        <span style="font-weight: bold; font-size: 1.2rem; color: #ccc;">IMOU</span>
-        <span style="font-weight: bold; font-size: 1.2rem; color: #ccc;">HAGROY</span>
-        <span style="font-weight: bold; font-size: 1.2rem; color: #ccc;">ZKTECO</span>
-         <span style="font-weight: bold; font-size: 1.2rem; color: #ccc;">JFL</span>
-         <span style="font-weight: bold; font-size: 1.2rem; color: #ccc;">PARADOX</span>
-    </div>
-</section>
-
-<footer style="padding: 50px 5%; background: #000; border-top: 2px solid var(--oro); text-align: center;">
-    <div style="margin-bottom: 20px;">
-        <h3 style="color: var(--oro); margin-bottom: 5px;">LIONS S.G. SOLUCIONES TÉCNICAS</h3>
-        <p style="font-size: 0.9rem; color: #888;">Seguridad Electrónica & Eléctrica</p>
-    </div>
-<section style="background: linear-gradient(145deg, #0a0a0a, #111); padding: 40px 5%; border-top: 1px solid #222; text-align: center;">
-    <div style="max-width: 800px; margin: auto; border: 1px dashed var(--oro); padding: 30px; border-radius: 15px;">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 15px;">
-            <span style="font-size: 1.5rem;">🏗️</span>
-            <h3 style="color: var(--oro); text-transform: uppercase; letter-spacing: 2px; margin: 0;">Plataforma en Actualización</h3>
-
-   <a href="proyectos.html" style="background: var(--oro); color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px;">
-    Ver Galería Real
-</a>
-     </div>
-        <p style="color: #ccc; font-size: 0.9rem; line-height: 1.6;">
-            Estamos trabajando para ofrecerte una mejor experiencia digital. Muy pronto habilitaremos:
-        </p>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
-            <span style="backgro yound: #1a1a1a; color: var(--oro-br); padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; border: 1px solid #333;">📂 Catálogo PDF 2026</span>
-            <span style="background: #1a1a1a; color: var(--oro-br); padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; border: 1px solid #333;">🛠️ Soporte Remoto</span>
-            <span style="background: #1a1a1a; color: var(--oro-br); padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; border: 1px solid #333;">🎥 Galería de Proyectos</span>
+    <section style="background: #050505; text-align: center;">
+        <p style="color: var(--oro); font-size: 0.7rem; margin-bottom: 30px; letter-spacing: 2px;">TECNOLOGÍA RESPALDADA POR</p>
+        <div class="marcas-flex">
+            <span class="marca-tag">HIKVISION</span>
+            <span class="marca-tag">DAHUA</span>
+            <span class="marca-tag">DSC</span>
+            <span class="marca-tag">HAGROY</span>
+            <span class="marca-tag">ZKTECO</span>
+            <span class="marca-tag">JFL</span>
+            <span class="marca-tag">PARADOX</span>
         </div>
-        <p style="color: #555; font-size: 0.75rem; margin-top: 20px;">
-            Última actualización: Marzo 2026 | Lions S.G. Soluciones Técnicas
+    </section>
+
+    <footer style="padding: 40px 5%; text-align: center; border-top: 2px solid var(--oro);">
+        <h3 style="color: var(--oro);">LIONS S.G. SOLUCIONES TÉCNICAS</h3>
+        <p style="margin: 15px 0;">📞 0969425863 | 📍 Quito - Pichincha</p>
+        
+        <div style="margin-top: 20px; opacity: 0.5;">
+            <div id="sfcx96mcl3y68uuykyf8n8649u717p7h8x4"></div>
+            <script type="text/javascript" src="https://counter10.optistats.ovh/private/counter.js?c=x96mcl3y68uuykyf8n8649u717p7h8x4&down=async" async></script>
+        </div>
+
+        <p style="font-size: 0.7rem; color: #444; margin-top: 30px;">
+            &copy; 2026 LIONS S.G. | Todos los derechos reservados. <br>
+            Soporte certificado para Josué.
         </p>
-    </div>
-</section>
-
-    <div style="color: var(--oro-br); font-weight: bold; margin-bottom: 15px;">
-        📞 0969425863 | 📍 Quito - Pichincha
-    </div>
-    <div style="font-size: 0.7rem; color: #444; margin-top: 30px;">
-        &copy; 2026 Todos los derechos reservados para Alex dario. <br>
-     
-    </div>
-
-<a href="https://wa.me/593969425863?text=Hola%20Lions%20S.G.,%20necesito%20soporte%20técnico%20urgente%20para%20mi%20sistema%20de%20seguridad." 
-   style="position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; border-radius: 50px; padding: 15px 25px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 9999; display: flex; align-items: center; gap: 10px; border: 2px solid #fff; transition: 0.3s;"
-   onmouseover="this.style.transform='scale(1.1)'" 
-   onmouseout="this.style.transform='scale(1.0)'">
-    <span style="font-size: 1.2rem;">🛠️</span> 
-    <span style="font-size: 0.9rem;">Soporte Técnico</span>
-</a>
-
-<div style="margin: 20px auto; padding: 15px; background: #0a0a0a; border: 1px solid #222; border-radius: 10px; display: inline-block; min-width: 200px;">
-    <p style="color: var(--oro); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">Visitantes en Línea</p>
-    
-    <div id="sfcx96mcl3y68uuykyf8n8649u717p7h8x4"></div>
-    <script type="text/javascript" src="https://counter10.optistats.ovh/private/counter.js?c=x96mcl3y68uuykyf8n8649u717p7h8x4&down=async" async></script>
-    
-    <p style="color: #444; font-size: 0.6rem; margin-top: 10px;">Monitoreo de tráfico en tiempo real - Quito</p>
-</div>
+    </footer>
 
 </body>
 </html>
