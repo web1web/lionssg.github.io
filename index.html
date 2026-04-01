@@ -37,12 +37,34 @@
         .btn-ver { display: inline-block; padding: 10px 25px; background: var(--oro); color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
         .btn-ver:hover { background: var(--oro-br); }
 
-        /* FORZAR POSICIONES: WHATSAPP IZQUIERDA / TIDIO DERECHA */
+        /* Testimonios */
+        .testimonios-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; margin: auto; }
+        .testimonio-card { flex: 1; min-width: 300px; max-width: 380px; background: var(--gris-suave); padding: 30px; border-radius: 15px; border-top: 3px solid var(--oro); display: flex; flex-direction: column; justify-content: space-between; }
+        .testimonio-text { color: #eee; font-style: italic; font-size: 0.9rem; margin-bottom: 20px; }
+        .testimonio-autor { color: var(--oro-br); font-weight: bold; font-size: 0.85rem; }
+
+        /* Formulario */
+        .form-container { max-width: 600px; margin: auto; background: var(--gris-suave); padding: 40px; border-radius: 20px; border: 1px solid #222; }
+        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: #000; border: 1px solid #333; color: #fff; border-radius: 8px; }
+        .btn-enviar { width: 100%; padding: 15px; background: var(--oro); color: #000; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; border-radius: 8px; }
+
+        /* Marcas */
+        .marcas-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; opacity: 0.7; align-items: center; }
+        .marca-tag { font-weight: bold; font-size: 1.1rem; color: #ccc; transition: 0.3s; }
+        .marca-tag:hover { color: var(--oro); opacity: 1; }
+
+        /* FORZAR POSICIONES DE BOTONES FLOTANTES */
+        #tidio-chat iframe, #tidio-chat-code iframe, .tidio-chat-iframe {
+            left: 10px !important;
+            right: auto !important;
+            bottom: 20px !important;
+        }
+
         .boton-soporte-final {
             position: fixed !important;
             bottom: 20px !important;
-            left: 20px !important; /* CAMBIADO A LA IZQUIERDA */
-            right: auto !important;
+            right: 20px !important;
+            left: auto !important;
             background: #25d366;
             color: white;
             padding: 12px 25px;
@@ -58,12 +80,6 @@
             transition: 0.3s;
         }
         .boton-soporte-final:hover { transform: scale(1.05); background: #1ebe57; }
-
-        /* Tidio se mantiene en su posición original por defecto (Derecha) */
-        #tidio-chat iframe, #tidio-chat-code iframe {
-            right: 10px !important;
-            left: auto !important;
-        }
     </style>
 </head>
 <body>
@@ -78,7 +94,120 @@
         <p class="subtitle">Seguridad Electrónica & Eléctrica | Quito - Pichincha</p>
     </header>
 
-    <footer style="padding: 60px 5%; text-align: center; background: #000; border-top: 2px solid var(--oro);">
+    <section id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="grid-servicios">
+            <div class="card">
+                <h3>Seguridad</h3>
+                <ul>
+                    <li>CCTV Hikvision / Dahua</li>
+                    <li>Cercas Eléctricas JFL / Hagroy</li>
+                    <li>Alarmas DSC / Neo / Paradox</li>
+                </ul>
+                <a href="seguridad.html" class="btn-ver">Ver Catálogo</a>
+            </div>
+            <div class="card">
+                <h3>Electricidad</h3>
+                <ul>
+                    <li>Tableros de Distribución</li>
+                    <li>Mantenimiento Preventivo</li>
+                    <li>Instalaciones Residenciales</li>
+                </ul>
+                <a href="electricidad.html" class="btn-ver">Ver Catálogo</a>
+            </div>
+            <div class="card">
+                <h3>Accesos</h3>
+                <ul>
+                    <li>Biometría ZKTeco / Hikvision</li>
+                    <li>Motores de Garaje</li>
+                    <li>Intercomunicadores</li>
+                </ul>
+                <a href="accesos.html" class="btn-ver">Ver Catálogo</a>
+            </div>
+            <div class="card">
+                <h3>Sublimación</h3>
+                <ul>
+                    <li>Camisetas Personalizadas</li>
+                    <li>Tazas y Jarros</li>
+                    <li>Gorras y Merchandising</li>
+                </ul>
+                <a href="sublimacion.html" class="btn-ver">Ver Catálogo</a>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #050505;">
+        <div class="form-container">
+            <h2 style="color: var(--oro); text-align: center; margin-bottom: 20px;">Solicitar Presupuesto</h2>
+            <form action="https://formspree.io/f/TU_ID_AQUI" method="POST">
+                <input type="text" name="name" placeholder="Tu Nombre" required>
+                <input type="tel" name="phone" placeholder="WhatsApp" required>
+                <select name="service">
+                    <option value="CCTV">Cámaras / Seguridad</option>
+                    <option value="Electricidad">Electricidad</option>
+                    <option value="Accesos">Control de Accesos</option>
+                    <option value="Diseno">Diseño y Sublimación</option>
+                </select>
+                <textarea name="message" rows="4" placeholder="Detalles de tu proyecto..."></textarea>
+                <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Clientes Satisfechos</h2>
+        <div class="testimonios-container">
+            <div class="testimonio-card">
+                <p class="testimonio-text">"Excelente instalación de cámaras. Monitoreo remoto perfecto en Quito."</p>
+                <div>
+                    <div class="testimonio-autor">Ing. Ricardo M.</div>
+                    <div style="color: #444; font-size: 0.7rem;">Cumbayá</div>
+                </div>
+            </div>
+            <div class="testimonio-card">
+                <p class="testimonio-text">"Instalaron el cerco eléctrico y alarma Neo. Muy profesionales."</p>
+                <div>
+                    <div class="testimonio-autor">Lucía Carrera</div>
+                    <div style="color: #444; font-size: 0.7rem;">Centro Norte</div>
+                </div>
+            </div>
+            <div class="testimonio-card">
+                <p class="testimonio-text">"Soporte técnico rápido para mis tableros eléctricos. Recomendados."</p>
+                <div>
+                    <div class="testimonio-autor">Juan Rodríguez</div>
+                    <div style="color: #444; font-size: 0.7rem;">Valle de los Chillos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: linear-gradient(145deg, #0a0a0a, #111); text-align: center;">
+        <div style="max-width: 800px; margin: auto; border: 1px dashed var(--oro); padding: 30px; border-radius: 15px;">
+            <h3 style="color: var(--oro); text-transform: uppercase; margin-bottom: 15px;">🏗️ Plataforma en Actualización</h3>
+            <p style="color: #ccc; font-size: 0.9rem;">Muy pronto habilitaremos Catálogos PDF 2026 y Galería de Proyectos.</p>
+            <a href="proyectos.html" style="background: var(--oro); color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px;">
+                Ver Galería Real
+            </a>
+        </div>
+    </section>
+
+    <section style="background: #050505; text-align: center;">
+        <p style="color: var(--oro); font-size: 0.7rem; margin-bottom: 30px; letter-spacing: 2px;">TECNOLOGÍA RESPALDADA POR</p>
+        <div class="marcas-flex">
+            <span class="marca-tag">HIKVISION</span>
+            <span class="marca-tag">DAHUA</span>
+            <span class="marca-tag">IMOU</span>
+            <span class="marca-tag">EZVIZ</span>
+            <span class="marca-tag">DSC</span>
+            <span class="marca-tag">NEO</span>
+            <span class="marca-tag">HAGROY</span>
+            <span class="marca-tag">ZKTECO</span>
+            <span class="marca-tag">JFL</span>
+            <span class="marca-tag">PARADOX</span>
+        </div>
+    </section>
+
+        <footer style="padding: 60px 5%; text-align: center; background: #000; border-top: 2px solid var(--oro);">
         <h3 style="color: var(--oro);">LIONS S.G. SOLUCIONES TÉCNICAS</h3>
         <p style="margin: 15px 0;">📞 0969425863 | 📍 Quito - Pichincha</p>
         
@@ -99,5 +228,36 @@
 
     <script src="//code.tidio.co/1xzoji2jm1g2zikjvorhihyamkh0jtrl.js" async></script>
     
+<style>
+    /* FORZAR SOPORTE TÉCNICO A LA IZQUIERDA */
+    .boton-soporte-final {
+        position: fixed !important;
+        bottom: 20px !important;
+        left: 20px !important;
+        right: auto !important;
+        z-index: 999999 !important; /* Siempre al frente */
+    }
+
+    /* FORZAR CHAT DE IA (TIDIO) A LA DERECHA */
+    #tidio-chat iframe, 
+    #tidio-chat-code iframe, 
+    .tidio-chat-iframe {
+        right: 10px !important;
+        left: auto !important;
+        bottom: 20px !important;
+        display: block !important;
+    }
+
+    /* Ajuste para móviles: evitar que se peguen demasiado al borde */
+    @media (max-width: 480px) {
+        .boton-soporte-final { bottom: 15px !important; left: 10px !important; padding: 10px 18px !important; font-size: 0.8rem; }
+        #tidio-chat iframe { bottom: 10px !important; right: 5px !important; }
+    }
+</style>
+
+
+
+
+
 </body>
 </html>
