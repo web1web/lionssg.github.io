@@ -15,7 +15,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--negro); color: var(--blanco); line-height: 1.6; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--negro); color: var(--blanco); line-height: 1.6; overflow-x: hidden; }
 
         /* Estilos de Navegación y Hero */
         header { padding: 40px 5%; text-align: center; background: linear-gradient(to bottom, #111, #000); border-bottom: 2px solid var(--oro); }
@@ -37,13 +37,13 @@
         .btn-ver { display: inline-block; padding: 10px 25px; background: var(--oro); color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
         .btn-ver:hover { background: var(--oro-br); }
 
-        /* Alineación de Testimonios */
-        .testimonios-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; margin: auto; align-items: stretch; }
+        /* Testimonios */
+        .testimonios-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; margin: auto; }
         .testimonio-card { flex: 1; min-width: 300px; max-width: 380px; background: var(--gris-suave); padding: 30px; border-radius: 15px; border-top: 3px solid var(--oro); display: flex; flex-direction: column; justify-content: space-between; }
         .testimonio-text { color: #eee; font-style: italic; font-size: 0.9rem; margin-bottom: 20px; }
         .testimonio-autor { color: var(--oro-br); font-weight: bold; font-size: 0.85rem; }
 
-        /* Formulario Estilizado */
+        /* Formulario */
         .form-container { max-width: 600px; margin: auto; background: var(--gris-suave); padding: 40px; border-radius: 20px; border: 1px solid #222; }
         input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: #000; border: 1px solid #333; color: #fff; border-radius: 8px; }
         .btn-enviar { width: 100%; padding: 15px; background: var(--oro); color: #000; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; border-radius: 8px; }
@@ -53,31 +53,56 @@
         .marca-tag { font-weight: bold; font-size: 1.1rem; color: #ccc; transition: 0.3s; }
         .marca-tag:hover { color: var(--oro); opacity: 1; }
 
-        /* Botón Soporte Flotante */
-        .soporte-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.5); z-index: 1000; border: 2px solid #fff; display: flex; align-items: center; gap: 8px; }
+        /* FORZAR POSICIONES DE BOTONES FLOTANTES */
+        #tidio-chat iframe, #tidio-chat-code iframe, .tidio-chat-iframe {
+            left: 10px !important;
+            right: auto !important;
+            bottom: 20px !important;
+        }
+
+        .boton-soporte-final {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            left: auto !important;
+            background: #25d366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            z-index: 999999 !important;
+            border: 2px solid #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .boton-soporte-final:hover { transform: scale(1.05); background: #1ebe57; }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/593969425863?text=Hola%20Lions%20S.G.,%20necesito%20soporte%20técnico%20urgente." class="soporte-btn">
+    <a href="https://wa.me/593969425863?text=Hola%20Lions%20S.G.,%20necesito%20soporte%20técnico%20urgente." class="boton-soporte-final">
         <span>🛠️</span> Soporte Técnico
     </a>
 
     <header>
         <img src="logo.png" alt="Lions S.G. Logo" class="logo-main">
         <h1>Lions S.G. Soluciones Técnicas</h1>
-        <p class="subtitle">Seguridad Electrónica  & Eléctrica | Quito - Pichincha</p>
+        <p class="subtitle">Seguridad Electrónica & Eléctrica | Quito - Pichincha</p>
     </header>
 
-    <section>
+    <section id="servicios">
         <h2 class="section-title">Nuestros Servicios</h2>
         <div class="grid-servicios">
             <div class="card">
                 <h3>Seguridad</h3>
                 <ul>
                     <li>CCTV Hikvision / Dahua</li>
-                    <li>Cercas Eléctricas Jfl / Hagroy</li>
-                    <li>Alarmas DSC / Neo/ Paradox</li>
+                    <li>Cercas Eléctricas JFL / Hagroy</li>
+                    <li>Alarmas DSC / Neo / Paradox</li>
                 </ul>
                 <a href="seguridad.html" class="btn-ver">Ver Catálogo</a>
             </div>
@@ -86,7 +111,7 @@
                 <ul>
                     <li>Tableros de Distribución</li>
                     <li>Mantenimiento Preventivo</li>
-                    <li>Instalaciones Residenciales y Comerciales</li>
+                    <li>Instalaciones Residenciales</li>
                 </ul>
                 <a href="electricidad.html" class="btn-ver">Ver Catálogo</a>
             </div>
@@ -99,12 +124,12 @@
                 </ul>
                 <a href="accesos.html" class="btn-ver">Ver Catálogo</a>
             </div>
-<div class="card">
+            <div class="card">
                 <h3>Sublimación</h3>
                 <ul>
-                    <li>Camisetas</li>
-                    <li>Tazas</li>
-                    <li>Gorras</li>
+                    <li>Camisetas Personalizadas</li>
+                    <li>Tazas y Jarros</li>
+                    <li>Gorras y Merchandising</li>
                 </ul>
                 <a href="sublimacion.html" class="btn-ver">Ver Catálogo</a>
             </div>
@@ -121,7 +146,7 @@
                     <option value="CCTV">Cámaras / Seguridad</option>
                     <option value="Electricidad">Electricidad</option>
                     <option value="Accesos">Control de Accesos</option>
-                    <option value="Accesos">Diseño y Sublimación</option>
+                    <option value="Diseno">Diseño y Sublimación</option>
                 </select>
                 <textarea name="message" rows="4" placeholder="Detalles de tu proyecto..."></textarea>
                 <button type="submit" class="btn-enviar">Enviar Solicitud</button>
@@ -140,7 +165,7 @@
                 </div>
             </div>
             <div class="testimonio-card">
-                <p class="testimonio-text">"Instalaron el cerco eléctrico y alarma Neo Muy profesionales."</p>
+                <p class="testimonio-text">"Instalaron el cerco eléctrico y alarma Neo. Muy profesionales."</p>
                 <div>
                     <div class="testimonio-autor">Lucía Carrera</div>
                     <div style="color: #444; font-size: 0.7rem;">Centro Norte</div>
@@ -149,41 +174,22 @@
             <div class="testimonio-card">
                 <p class="testimonio-text">"Soporte técnico rápido para mis tableros eléctricos. Recomendados."</p>
                 <div>
-                    <div class="testimonio-autor">Juan Rodríguez
+                    <div class="testimonio-autor">Juan Rodríguez</div>
                     <div style="color: #444; font-size: 0.7rem;">Valle de los Chillos</div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    </footer>
-<section style="background: linear-gradient(145deg, #0a0a0a, #111); padding: 40px 5%; border-top: 1px solid #222; text-align: center;">
-    <div style="max-width: 800px; margin: auto; border: 1px dashed var(--oro); padding: 30px; border-radius: 15px;">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 15px;">
-            <span style="font-size: 1.5rem;">🏗️</span>
-            <h3 style="color: var(--oro); text-transform: uppercase; letter-spacing: 2px; margin: 0;">Plataforma en Actualización</h3>
+    <section style="background: linear-gradient(145deg, #0a0a0a, #111); text-align: center;">
+        <div style="max-width: 800px; margin: auto; border: 1px dashed var(--oro); padding: 30px; border-radius: 15px;">
+            <h3 style="color: var(--oro); text-transform: uppercase; margin-bottom: 15px;">🏗️ Plataforma en Actualización</h3>
+            <p style="color: #ccc; font-size: 0.9rem;">Muy pronto habilitaremos Catálogos PDF 2026 y Galería de Proyectos.</p>
+            <a href="proyectos.html" style="background: var(--oro); color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px;">
+                Ver Galería Real
+            </a>
         </div>
-        <p style="color: #ccc; font-size: 0.9rem; line-height: 1.6;">
-            Estamos trabajando para ofrecerte una mejor experiencia digital. Muy pronto habilitaremos:
-        </p>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
-            <span style="background: #1a1a1a; color: var(--oro-br); padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; border: 1px solid #333;">📂 Catálogo PDF 2026</span>
-            <span style="background: #1a1a1a; color: var(--oro-br); padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; border: 1px solid #333;">🛠️ Soporte Remoto</span>
-            <span style="background: #1a1a1a; color: var(--oro-br); padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; border: 1px solid #333;">🎥 Galería de Proyectos</span>
-        </div>
-        <p style="color: #555; font-size: 0.75rem; margin-top: 20px;">
-            Última actualización: Marzo 2026 | Lions S.G. Soluciones Técnicas
-        </p>
-    </div>
-<a href="proyectos.html" style="background: var(--oro); color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px;">
-    Ver Galería Real
-</a>
-</section>
-
-<script src="//code.tidio.co/1xzoji2jm1g2zikjvorhihyamkh0jtrl.js" async></script>
-
-
+    </section>
 
     <section style="background: #050505; text-align: center;">
         <p style="color: var(--oro); font-size: 0.7rem; margin-bottom: 30px; letter-spacing: 2px;">TECNOLOGÍA RESPALDADA POR</p>
@@ -191,83 +197,30 @@
             <span class="marca-tag">HIKVISION</span>
             <span class="marca-tag">DAHUA</span>
             <span class="marca-tag">IMOU</span>
-            <span class="marca-tag">EZVIS</span>
+            <span class="marca-tag">EZVIZ</span>
             <span class="marca-tag">DSC</span>
             <span class="marca-tag">NEO</span>
             <span class="marca-tag">HAGROY</span>
             <span class="marca-tag">ZKTECO</span>
             <span class="marca-tag">JFL</span>
             <span class="marca-tag">PARADOX</span>
-        
         </div>
     </section>
 
-    <footer style="padding: 40px 5%; text-align: center; border-top: 2px solid var(--oro);">
+    <footer style="padding: 60px 5%; text-align: center; background: #000; border-top: 2px solid var(--oro);">
         <h3 style="color: var(--oro);">LIONS S.G. SOLUCIONES TÉCNICAS</h3>
         <p style="margin: 15px 0;">📞 0969425863 | 📍 Quito - Pichincha</p>
         
-        <div style="margin-top: 20px; opacity: 0.5;">
-            <div id="sfcx96mcl3y68uuykyf8n8649u717p7h8x4"></div>
-            <script type="text/javascript" src="https://counter10.optistats.ovh/private/counter.js?c=x96mcl3y68uuykyf8n8649u717p7h8x4&down=async" async></script>
+        <div style="display: flex; justify-content: center; gap: 30px; margin: 30px 0;">
+            <a href="https://www.tiktok.com/@lionssgsoluciones" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" style="width:30px; filter:invert(1);"></a>
+            <a href="https://www.instagram.com/lions_sg_solucionestecnicas" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" style="width:30px; filter:invert(1);"></a>
+            <a href="https://www.facebook.com/share/1dETSA1mcV/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" style="width:30px; filter:invert(1);"></a>
         </div>
 
-        <p style="font-size: 0.7rem; color: #444; margin-top: 30px;">
-            &copy; 2026 LIONS S.G. | Todos los derechos reservados Alex Dario
-        </p>
-<section style="background: #000; padding: 40px 5%; text-align: center; border-top: 1px solid #1a1a1a;">
-    <p style="color: var(--oro); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Sigue nuestras instalaciones en tiempo real</p>
+        <p style="font-size: 0.7rem; color: #444;">&copy; 2026 LIONS S.G. | Todos los derechos reservados Alex Dario</p>
+    </footer>
+
+    <script src="//code.tidio.co/1xzoji2jm1g2zikjvorhihyamkh0jtrl.js" async></script>
     
-    <div style="display: flex; justify-content: center; gap: 30px; align-items: center;">
-        
-        <a href="https://www.tiktok.com/@lionssgsoluciones" target="_blank" style="text-decoration: none; transition: 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" style="width: 35px; filter: invert(1) sepia(1) saturate(5) hue-rotate(10deg);">
-                <span style="color: #888; font-size: 0.7rem;">TikTok</span>
-            </div>
-        </a>
-
-        <a href="https://www.instagram.com/lions_sg_solucionestecnicas?igsh=OW15N2Vyd2xuZDIw" target="_blank" style="text-decoration: none; transition: 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width: 35px; filter: invert(1) sepia(1) saturate(5) hue-rotate(10deg);">
-                <span style="color: #888; font-size: 0.7rem;">Instagram</span>
-            </div>
-        </a>
-
-        <a href="https://www.facebook.com/share/1dETSA1mcV/" target="_blank" style="text-decoration: none; transition: 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style="width: 35px; filter: invert(1) sepia(1) saturate(5) hue-rotate(10deg);">
-                <span style="color: #888; font-size: 0.7rem;">Facebook</span>
-            </div>
-        </a>
-
-    </div>
-    <style>
-    /* FORZAR MOVIMIENTO DE TIDIO A LA IZQUIERDA */
-    #tidio-chat iframe, 
-    #tidio-chat-code iframe, 
-    .tidio-chat-iframe {
-        left: 10px !important;
-        right: auto !important;
-        bottom: 20px !important;
-    }
-
-    /* FORZAR BOTÓN DE WHATSAPP A LA DERECHA */
-    .boton-soporte {
-        position: fixed !important;
-        bottom: 20px !important;
-        right: 20px !important;
-        left: auto !important;
-        z-index: 999999 !important;
-    }
-</style>
-
-<a href="https://wa.me/593969425863?text=Hola%20Lions%20S.G.,%20necesito%20soporte%20técnico%20urgente." 
-   class="boton-soporte"
-   style="background: #25d366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.5); border: 2px solid #fff; display: flex; align-items: center; gap: 8px;">
-    <span>🛠️</span> Soporte Técnico
-</a>
-
-    
-
 </body>
 </html>
