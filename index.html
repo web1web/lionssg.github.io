@@ -241,24 +241,29 @@
         </a>
 
     </div>
-    <script src="//code.tidio.co/1xzoji2jm1g2zikjvorhihyamkh0jtrl.js" async></script>
+    <style>
+    /* FORZAR MOVIMIENTO DE TIDIO A LA IZQUIERDA */
+    #tidio-chat iframe, 
+    #tidio-chat-code iframe, 
+    .tidio-chat-iframe {
+        left: 10px !important;
+        right: auto !important;
+        bottom: 20px !important;
+    }
 
-<style>
-    /* Mover Tidio a la izquierda para no chocar con WhatsApp */
-    #tidio-chat-code iframe {
-        left: auto !important;  /* Lo mueve a la izquierda */
-        right: 10px !important; /* Quita la posición de la derecha */
-        bottom: 20px !important; 
+    /* FORZAR BOTÓN DE WHATSAPP A LA DERECHA */
+    .boton-soporte {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        left: auto !important;
+        z-index: 999999 !important;
     }
-    #tidio-chat-code iframe {
-        bottom: 90px !important; 
-    }
-    */
 </style>
 
-
-    <a href="https://wa.me/593969425863?text=Hola%20Lions%20S.G.,%20necesito%20soporte%20técnico%20urgente." 
-   style="position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.5); z-index: 10000; border: 2px solid #fff; display: flex; align-items: center; gap: 8px;">
+<a href="https://wa.me/593969425863?text=Hola%20Lions%20S.G.,%20necesito%20soporte%20técnico%20urgente." 
+   class="boton-soporte"
+   style="background: #25d366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.5); border: 2px solid #fff; display: flex; align-items: center; gap: 8px;">
     <span>🛠️</span> Soporte Técnico
 </a>
 
