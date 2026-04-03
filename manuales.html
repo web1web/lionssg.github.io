@@ -1,41 +1,88 @@
-
-<section style="margin-top: 50px; border-top: 1px solid #222; padding-top: 40px;">
-    <h2 class="section-title">Manuales de Usuario (PDF)</h2>
-    <p style="text-align: center; color: #888; font-size: 0.9rem; margin-bottom: 30px;">Descarga las guías rápidas oficiales en tu celular.</p>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuales PDF | LIONS S.G.</title>
+    <style>
+        :root { --oro: #D4AF37; --negro: #000000; --gris: #111111; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--negro); color: white; line-height: 1.6; }
         
-        <a href="manuales/guia-hikconnect.pdf" target="_blank" style="text-decoration: none; background: #1a1a1a; padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 15px; border: 1px solid #333; transition: 0.3s;" onmouseover="this.style.borderColor='#D4AF37'">
-            <span style="font-size: 1.5rem;">📄</span>
-            <div>
-                <h4 style="color: #D4AF37; font-size: 0.9rem;">Guía Hik-Connect</h4>
-                <p style="color: #666; font-size: 0.75rem;">Configuración de cámaras móvil.</p>
-            </div>
-        </a>
+        header { padding: 30px 5%; text-align: center; border-bottom: 2px solid var(--oro); background: #050505; }
+        .btn-volver { display: inline-block; margin-bottom: 15px; color: var(--oro); text-decoration: none; font-weight: bold; }
 
-        <a href="manuales/manual-paradox.pdf" target="_blank" style="text-decoration: none; background: #1a1a1a; padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 15px; border: 1px solid #333; transition: 0.3s;" onmouseover="this.style.borderColor='#D4AF37'">
-            <span style="font-size: 1.5rem;">🚨</span>
-            <div>
-                <h4 style="color: #D4AF37; font-size: 0.9rem;">Manual Alarmas Paradox</h4>
-                <p style="color: #666; font-size: 0.75rem;">Uso de teclado y particiones.</p>
-            </div>
-        </a>
+        .container { padding: 40px 5%; max-width: 900px; margin: auto; }
+        .section-title { color: var(--oro); text-align: center; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
 
-        <a href="manuales/cerco-jfl.pdf" target="_blank" style="text-decoration: none; background: #1a1a1a; padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 15px; border: 1px solid #333; transition: 0.3s;" onmouseover="this.style.borderColor='#D4AF37'">
-            <span style="font-size: 1.5rem;">⚡</span>
-            <div>
-                <h4 style="color: #D4AF37; font-size: 0.9rem;">Cerca Eléctrica JFL</h4>
-                <p style="color: #666; font-size: 0.75rem;">Mantenimiento y armado.</p>
-            </div>
-        </a>
+        /* GRID DE MANUALES */
+        .manual-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        
+        .manual-card { 
+            background: var(--gris); 
+            padding: 25px; 
+            border-radius: 15px; 
+            border: 1px solid #222; 
+            display: flex; 
+            align-items: center; 
+            gap: 20px; 
+            text-decoration: none; 
+            transition: 0.3s; 
+        }
+        .manual-card:hover { border-color: var(--oro); transform: scale(1.02); }
+        .icon { font-size: 2rem; }
+        .info h3 { color: var(--oro); font-size: 1rem; margin-bottom: 5px; }
+        .info p { color: #888; font-size: 0.8rem; }
 
-        <a href="manuales/guia-dmss.pdf" target="_blank" style="text-decoration: none; background: #1a1a1a; padding: 20px; border-radius: 12px; display: flex; align-items: center; gap: 15px; border: 1px solid #333; transition: 0.3s;" onmouseover="this.style.borderColor='#D4AF37'">
-            <span style="font-size: 1.5rem;">📱</span>
-            <div>
-                <h4 style="color: #D4AF37; font-size: 0.9rem;">App DMSS Dahua</h4>
-                <p style="color: #666; font-size: 0.75rem;">Manual para ver cámaras Dahua.</p>
-            </div>
-        </a>
+        footer { text-align: center; padding: 40px; color: #444; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
 
+    <header>
+        <a href="index.html" class="btn-volver">← Volver al Inicio</a>
+        <h1>Biblioteca de Manuales</h1>
+        <p style="color: #666; font-size: 0.8rem;">Lions S.G. - Documentación Técnica</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Descargas Disponibles</h2>
+
+        <div class="manual-grid">
+            <a href="manuales/guia-hikconnect.pdf" target="_blank" class="manual-card">
+                <div class="icon">📄</div>
+                <div class="info">
+                    <h3>Hik-Connect (Cámaras)</h3>
+                    <p>Guía de visualización móvil.</p>
+                </div>
+            </a>
+
+            <a href="manuales/manual-paradox.pdf" target="_blank" class="manual-card">
+                <div class="icon">🚨</div>
+                <div class="info">
+                    <h3>Alarmas Paradox</h3>
+                    <p>Uso de teclados y particiones.</p>
+                </div>
+            </a>
+
+            <a href="manuales/cerco-jfl.pdf" target="_blank" class="manual-card">
+                <div class="icon">⚡</div>
+                <div class="info">
+                    <h3>Cercos JFL / Hagroy</h3>
+                    <p>Mantenimiento y seguridad.</p>
+                </div>
+            </a>
+
+            <a href="manuales/guia-dmss.pdf" target="_blank" class="manual-card">
+                <div class="icon">📱</div>
+                <div class="info">
+                    <h3>App DMSS (Dahua)</h3>
+                    <p>Configuración paso a paso.</p>
+                </div>
+            </a>
+        </div>
     </div>
-</section>
+
+    <footer>LIONS S.G. | Soporte Técnico Especializado</footer>
+</body>
+</html>
