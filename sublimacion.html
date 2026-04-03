@@ -1,59 +1,87 @@
 <style>
-    /* Estilos base para computadoras (3 columnas) */
+    /* 1. Fondo negro global y marca de agua */
+    html, body {
+        background-color: #000000; /* Evita que se vea blanco al final */
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Marca de agua fija en el fondo */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-image: url('https://web1web.github.io/lionssg.github.io/images/lions-sg-logo.png'); 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 70% auto;
+        opacity: 0.03; /* Muy sutil */
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    /* 2. Diseño adaptable (Mobile First) */
     .grid-sublimacion {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr; /* Por defecto 1 columna para celular */
         gap: 20px;
         max-width: 1200px;
         margin: auto;
     }
 
-    /* ADAPTACIÓN PARA CELULARES */
-    @media (max-width: 768px) {
+    /* Escritorio: 3 columnas */
+    @media (min-width: 768px) {
         .grid-sublimacion {
-            grid-template-columns: 1fr; /* Cambia a 1 sola columna en el móvil */
-            gap: 15px;
+            grid-template-columns: repeat(3, 1fr);
         }
-        
-        .sublimacion-title {
-            font-size: 1.5rem !important; /* Título un poco más pequeño en móvil */
-        }
+    }
+
+    /* Estilo de tarjetas */
+    .card-sub {
+        background: #111111;
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        border: 1px solid #222222;
     }
 </style>
 
-<section id="sublimacion" style="background-color: #000; color: white; padding: 40px 5%; font-family: 'Segoe UI', sans-serif;">
+<section id="sublimacion" style="padding: 60px 5%;">
     
     <div style="text-align: center; margin-bottom: 40px;">
-        <h2 class="sublimacion-title" style="color: #D4AF37; text-transform: uppercase; letter-spacing: 3px; font-size: 1.8rem; margin-bottom: 10px;">
+        <h2 style="color: #D4AF37; text-transform: uppercase; letter-spacing: 3px; font-size: 1.8rem; margin-bottom: 10px;">
             Sublimación y Diseño
         </h2>
         <hr style="width: 60px; border: 1.5px solid #D4AF37; margin: auto;">
     </div>
 
     <div class="grid-sublimacion">
-        <div style="background: #111; border-radius: 15px; padding: 25px; text-align: center; border: 1px solid #222;">
+        <div class="card-sub">
             <div style="font-size: 3rem; margin-bottom: 15px;">☕</div>
-            <h3 style="color: #D4AF37; margin-bottom: 10px; font-size: 1.1rem;">Tazas Personalizadas</h3>
-            <p style="color: #aaa; font-size: 0.9rem; line-height: 1.5;">Diseños únicos y logos para tus tazas. Ideal para empresas en Quito.</p>
+            <h3 style="color: #D4AF37; margin-bottom: 10px;">Tazas Personalizadas</h3>
+            <p style="color: #aaa; font-size: 0.9rem;">Diseños únicos y logos para tus tazas.</p>
         </div>
 
-        <div style="background: #111; border-radius: 15px; padding: 25px; text-align: center; border: 1px solid #222;">
+        <div class="card-sub">
             <div style="font-size: 3rem; margin-bottom: 15px;">👕</div>
-            <h3 style="color: #D4AF37; margin-bottom: 10px; font-size: 1.1rem;">Camisetas Técnicas</h3>
-            <p style="color: #aaa; font-size: 0.9rem; line-height: 1.5;">Estampados de alta calidad para uniformes y eventos corporativos.</p>
+            <h3 style="color: #D4AF37; margin-bottom: 10px;">Camisetas Técnicas</h3>
+            <p style="color: #aaa; font-size: 0.9rem;">Estampados de alta calidad para empresas.</p>
         </div>
 
-        <div style="background: #111; border-radius: 15px; padding: 25px; text-align: center; border: 1px solid #222;">
+        <div class="card-sub">
             <div style="font-size: 3rem; margin-bottom: 15px;">🎁</div>
-            <h3 style="color: #D4AF37; margin-bottom: 10px; font-size: 1.1rem;">Artículos Promocionales</h3>
-            <p style="color: #aaa; font-size: 0.9rem; line-height: 1.5;">Mousepads, llaveros y más para potenciar la imagen de tu marca.</p>
+            <h3 style="color: #D4AF37; margin-bottom: 10px;">Artículos Promocionales</h3>
+            <p style="color: #aaa; font-size: 0.9rem;">Mousepads y llaveros personalizados.</p>
         </div>
     </div>
 
-    <div style="text-align: center; margin-top: 40px;">
+    <div style="text-align: center; margin-top: 50px;">
         <a href="https://www.facebook.com/share/1BEsWK1uvY/" target="_blank" 
-           style="background: #0866FF; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-weight: bold; font-size: 0.9rem; border: 1px solid white; box-shadow: 0 4px 15px rgba(8, 102, 255, 0.3);">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="FB" style="width: 20px; height: 20px; filter: brightness(0) invert(1);">
+           style="background: #0866FF; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-weight: bold; border: 1px solid white;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" style="width: 20px; filter: brightness(0) invert(1);">
             SÍGUENOS EN FACEBOOK
         </a>
     </div>
