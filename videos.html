@@ -2,65 +2,114 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videos Instructivos | LIONS S.G.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tutoriales Lions S.G. | Video-Guías</title>
     <style>
-        :root { --oro: #D4AF37; --negro: #000000; --gris: #0a0a0a; }
+        :root {
+            --oro: #D4AF37;
+            --negro: #000000;
+            --gris-card: #111111;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; background-color: var(--negro); color: white; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--negro); color: white; overflow-x: hidden; }
 
-        header { padding: 30px 5%; text-align: center; border-bottom: 2px solid var(--oro); background: #050505; }
-        .btn-volver { display: inline-block; margin-bottom: 15px; color: var(--oro); text-decoration: none; font-weight: bold; }
+        /* HEADER MÓVIL */
+        header { padding: 25px 5%; text-align: center; border-bottom: 2px solid var(--oro); background: linear-gradient(to bottom, #0a0a0a, #000); }
+        .btn-regresar { display: inline-block; color: var(--oro); text-decoration: none; font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; border: 1px solid var(--oro); padding: 5px 15px; border-radius: 20px; }
 
-        .container { padding: 30px 5%; max-width: 1000px; margin: auto; }
-        .section-title { color: var(--oro); text-align: center; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem; }
+        .container { padding: 20px 5%; max-width: 800px; margin: auto; }
+        .section-title { color: var(--oro); text-align: center; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; }
 
-        /* CONTENEDOR DE VIDEOS */
-        .video-card { background: #111; border-radius: 15px; overflow: hidden; border: 1px solid #222; margin-bottom: 30px; }
-        
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; background: #000; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        /* --- CONTENEDOR DE VIDEO RESPONSIVO --- */
+        .video-card { 
+            background: var(--gris-card); 
+            border-radius: 15px; 
+            overflow: hidden; 
+            margin-bottom: 30px; 
+            border: 1px solid #222;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
 
-        .video-info { padding: 20px; border-top: 1px solid #222; }
-        .video-info h3 { color: var(--oro); font-size: 1.1rem; margin-bottom: 8px; }
-        .video-info p { color: #888; font-size: 0.9rem; }
+        /* Proporción 16:9 Adaptable */
+        .video-wrapper { 
+            position: relative; 
+            padding-bottom: 56.25%; /* Mantiene el formato TV/Youtube */
+            height: 0; 
+            background: #000; 
+        }
+        .video-wrapper iframe { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+        }
 
-        footer { text-align: center; padding: 40px; color: #444; font-size: 0.8rem; }
+        /* Información del video */
+        .video-info { padding: 18px; border-top: 1px solid #222; }
+        .video-info h3 { color: var(--oro); font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .video-info p { color: #aaa; font-size: 0.85rem; line-height: 1.4; }
+
+        /* FOOTER SIMPLIFICADO */
+        footer { text-align: center; padding: 30px; color: #444; font-size: 0.75rem; border-top: 1px solid #111; }
+
+        /* Ajustes específicos para pantallas muy pequeñas */
+        @media (max-width: 400px) {
+            .section-title { font-size: 0.95rem; }
+            .video-info h3 { font-size: 0.9rem; }
+            .video-info p { font-size: 0.8rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="btn-volver">← Volver al Inicio</a>
-        <h1>Guías en Video</h1>
-        <p style="color: #666; font-size: 0.8rem;">Lions S.G. - Paso a Paso Visual</p>
+        <a href="index.html" class="btn-regresar">🏠 Inicio</a>
+        <h1>TUTORIALES</h1>
+        <p style="color: #666; font-size: 0.75rem;">Soporte Técnico Lions S.G. Quito</p>
     </header>
 
     <div class="container">
-        <h2 class="section-title">Tutoriales de Configuración</h2>
+        <h2 class="section-title">Guías de Configuración</h2>
 
         <div class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/ID_VIDEO_1?rel=0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/PON_AQUI_ID_VIDEO_1?rel=0&modestbranding=1" allowfullscreen></iframe>
             </div>
             <div class="video-info">
-                <h3>App Hik-Connect (Cámaras)</h3>
-                <p>Aprende a visualizar y compartir tus cámaras Hikvision desde el celular.</p>
+                <h3>📹 Cámaras Hikvision</h3>
+                <p>Guía paso a paso para dar de alta tus cámaras en el app Hik-Connect y verlas en tiempo real.</p>
             </div>
         </div>
 
         <div class="video-card">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/ID_VIDEO_2?rel=0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/PON_AQUI_ID_VIDEO_2?rel=0&modestbranding=1" allowfullscreen></iframe>
             </div>
             <div class="video-info">
-                <h3>Alarmas Paradox (BlueEye)</h3>
-                <p>Cómo armar, desarmar y revisar el historial de eventos en tu smartphone.</p>
+                <h3>🚨 Alarmas Paradox</h3>
+                <p>Cómo usar la aplicación BlueEye para armar y desarmar tu sistema desde cualquier lugar.</p>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/PON_AQUI_ID_VIDEO_3?rel=0&modestbranding=1" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h3>⚡ Cercas JFL/Hagroy</h3>
+                <p>Mantenimiento preventivo básico y cómo verificar que el sistema tenga pulso de alto voltaje.</p>
             </div>
         </div>
 
     </div>
 
-    <footer>LIONS S.G. | Expertos en Seguridad Electrónica</footer>
+    <footer>
+        &copy; 2026 LIONS S.G. | Soporte Técnico Especializado<br>
+        Quito - Ecuador
+    </footer>
+
 </body>
 </html>
