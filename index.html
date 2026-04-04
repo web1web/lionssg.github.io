@@ -2,129 +2,217 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LIONS S.G. | Soluciones Técnicas - Quito</title>
     <style>
         :root {
             --oro: #D4AF37;
             --oro-br: #FFD700;
             --negro: #000000;
-            --gris-oscuro: #0a0a0a;
             --gris-suave: #111111;
             --blanco: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* FONDO GLOBAL CON MARCA DE AGUA */
         body { 
             font-family: 'Segoe UI', Roboto, sans-serif; 
             background-color: var(--negro); 
             color: var(--blanco); 
-            line-height: 1.6; 
+            line-height: 1.5; 
             overflow-x: hidden;
-            position: relative;
         }
 
+        /* MARCA DE AGUA RESPONSIVA */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            /* Ruta corregida a tu carpeta de imagenes */
             background-image: url('https://web1web.github.io/lionssg.github.io/imagenes/lions-sg-logo.png'); 
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 90% auto; /* Logo de fondo gigante */
-            opacity: 0.04; /* Marca de agua muy sutil */
+            background-size: 80% auto;
+            opacity: 0.04; 
             z-index: -1;
             pointer-events: none;
         }
 
-        /* Estilos de Navegación y Hero */
-        header { padding: 60px 5%; text-align: center; background: linear-gradient(to bottom, #111, #000); border-bottom: 2px solid var(--oro); }
-        
-        /* LOGO PRINCIPAL AGRANDADO */
-        .logo-main { 
-            width: 220px; /* Tamaño aumentado significativamente */
-            height: auto;
-            margin-bottom: 20px; 
-            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5)); 
+        header { 
+            padding: 40px 20px; 
+            text-align: center; 
+            background: linear-gradient(to bottom, #111, #000); 
+            border-bottom: 2px solid var(--oro); 
         }
 
-        h1 { color: var(--oro); font-size: 2.2rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 900; }
-        .subtitle { color: #888; font-size: 1rem; margin-top: 5px; font-weight: bold; }
+        .logo-main { 
+            width: clamp(150px, 40vw, 220px); 
+            height: auto;
+            margin-bottom: 15px; 
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)); 
+        }
 
-        /* Secciones Generales */
-        section { padding: 60px 5%; border-bottom: 1px solid #1a1a1a; position: relative; z-index: 1; }
-        .section-title { color: var(--oro); text-align: center; font-size: 1.8rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 3px; font-weight: 800; }
+        h1 { 
+            color: var(--oro); 
+            font-size: clamp(1.4rem, 6vw, 2.2rem); 
+            text-transform: uppercase; 
+            font-weight: 900; 
+            line-height: 1.2;
+        }
 
-        /* Grid de Tarjetas de Servicio */
-        .grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: auto; }
-        .card { background: rgba(17, 17, 17, 0.9); padding: 35px; border-radius: 20px; border: 1px solid #222; transition: 0.3s; text-align: center; }
-        .card:hover { border-color: var(--oro); transform: translateY(-5px); background: rgba(20, 20, 20, 1); }
-        .card h3 { color: var(--oro); margin-bottom: 15px; font-size: 1.4rem; }
-        .card ul { list-style: none; color: #ccc; font-size: 1rem; margin-bottom: 20px; }
-        .card li { margin-bottom: 8px; }
-        .btn-ver { display: inline-block; padding: 12px 30px; background: var(--oro); color: #000; text-decoration: none; font-weight: bold; border-radius: 50px; transition: 0.3s; text-transform: uppercase; font-size: 0.85rem; }
-        .btn-ver:hover { background: var(--oro-br); transform: scale(1.05); }
+        .subtitle { color: #888; font-size: clamp(0.8rem, 3vw, 1rem); margin-top: 8px; font-weight: bold; }
 
-        /* Testimonios */
-        .testimonios-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; margin: auto; }
-        .testimonio-card { flex: 1; min-width: 300px; max-width: 380px; background: rgba(17, 17, 17, 0.9); padding: 30px; border-radius: 15px; border-top: 3px solid var(--oro); }
-        .testimonio-text { color: #eee; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
-        .testimonio-autor { color: var(--oro-br); font-weight: bold; font-size: 0.9rem; }
+        section { padding: 50px 20px; border-bottom: 1px solid #1a1a1a; }
 
-        /* Formulario */
-        .form-container { max-width: 600px; margin: auto; background: rgba(17, 17, 17, 0.95); padding: 40px; border-radius: 25px; border: 1px solid #333; }
-        input, select, textarea { width: 100%; padding: 14px; margin-bottom: 15px; background: #000; border: 1px solid #444; color: #fff; border-radius: 10px; font-size: 1rem; }
-        .btn-enviar { width: 100%; padding: 18px; background: var(--oro); color: #000; border: none; font-weight: 900; cursor: pointer; text-transform: uppercase; border-radius: 10px; font-size: 1.1rem; }
+        .section-title { 
+            color: var(--oro); 
+            text-align: center; 
+            font-size: clamp(1.3rem, 5vw, 1.8rem); 
+            margin-bottom: 35px; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+        }
 
-        /* Marcas */
-        .marcas-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; opacity: 0.8; align-items: center; }
-        .marca-tag { font-weight: 900; font-size: 1.2rem; color: #666; transition: 0.3s; letter-spacing: 1px; }
-        .marca-tag:hover { color: var(--oro); opacity: 1; }
+        /* GRID RESPONSIVO */
+        .grid-servicios { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            max-width: 1200px; 
+            margin: auto; 
+        }
 
-        /* BOTONES FLOTANTES */
+        .card { 
+            background: rgba(17, 17, 17, 0.9); 
+            padding: 30px 20px; 
+            border-radius: 20px; 
+            border: 1px solid #222; 
+            text-align: center; 
+            transition: 0.3s;
+        }
+
+        .card h3 { color: var(--oro); margin-bottom: 15px; font-size: 1.3rem; }
+        .card ul { list-style: none; color: #ccc; font-size: 0.95rem; margin-bottom: 20px; }
+        .card li { margin-bottom: 6px; }
+
+        .btn-ver { 
+            display: inline-block; 
+            padding: 12px 25px; 
+            background: var(--oro); 
+            color: #000; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 50px; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+        }
+
+        /* FORMULARIO ADAPTADO */
+        .form-container { 
+            max-width: 600px; 
+            margin: auto; 
+            background: rgba(17, 17, 17, 0.95); 
+            padding: 30px 20px; 
+            border-radius: 20px; 
+            border: 1px solid #333; 
+        }
+
+        input, select, textarea { 
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 12px; 
+            background: #000; 
+            border: 1px solid #444; 
+            color: #fff; 
+            border-radius: 8px; 
+            font-size: 1rem; 
+        }
+
+        .btn-enviar { 
+            width: 100%; 
+            padding: 15px; 
+            background: var(--oro); 
+            color: #000; 
+            border: none; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            border-radius: 8px; 
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        /* BLOQUE DESBLOQUEO RESPONSIVO */
+        .promo-box {
+            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+            border: 2px solid var(--oro);
+            margin: 20px 0;
+            border-radius: 25px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* MARCAS FLEXIBLES */
+        .marcas-flex { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 15px; 
+            opacity: 0.7; 
+        }
+
+        .marca-tag { font-weight: bold; font-size: 0.9rem; color: #777; }
+
+        /* SOPORTE FLOTANTE (ADAPTADO PARA MÓVIL) */
         .boton-soporte-final {
-            position: fixed !important;
-            bottom: 25px !important;
-            left: 25px !important;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
             background: #25d366;
             color: white;
-            padding: 15px 25px;
-            border-radius: 60px;
+            padding: 12px 20px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 900;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.6);
-            z-index: 999999 !important;
+            font-weight: bold;
+            z-index: 1000;
             border: 2px solid #fff;
             display: flex;
             align-items: center;
-            gap: 10px;
-            transition: 0.3s;
+            gap: 8px;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
-        .boton-soporte-final:hover { transform: scale(1.1); background: #1ebe57; }
 
-        #tidio-chat iframe { right: 15px !important; bottom: 15px !important; }
+        /* BOTONES DE ACCIÓN RÁPIDA */
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 1.6rem; }
-            .logo-main { width: 180px; }
-            .mantenimiento-title { font-size: 2.8rem !important; }
+        @media (min-width: 600px) {
+            .action-buttons { grid-template-columns: 1fr 1fr; }
+        }
+
+        footer { padding: 40px 20px; text-align: center; border-top: 2px solid var(--oro); }
+
+        /* Ajuste para que Tidio no tape el botón de soporte en móvil */
+        #tidio-chat iframe { 
+            bottom: 10px !important; 
+            right: 10px !important; 
         }
     </style>
 </head>
 <body>
 
     <a href="https://wa.me/593969425863?text=Hola%20Lions%20S.G.,%20necesito%20soporte%20técnico%20urgente." class="boton-soporte-final">
-        <span>🛠️</span> Soporte Técnico
+        <span>🛠️</span> Soporte
     </a>
 
     <header>
         <img src="https://web1web.github.io/lionssg.github.io/imagenes/lions-sg-logo.png" alt="Lions S.G. Logo" class="logo-main">
         <h1>Lions S.G. Soluciones Técnicas</h1>
-        <p class="subtitle">Seguridad Electrónica & Eléctrica | Quito - Pichincha</p>
+        <p class="subtitle">Seguridad Electrónica & Eléctrica | Quito</p>
     </header>
 
     <section id="servicios">
@@ -133,124 +221,97 @@
             <div class="card">
                 <h3>Seguridad Electrónica</h3>
                 <ul>
-                    <li>Hikvision / Dahua / Imou</li>
-                    <li>Cercas Eléctricas JFL / Hagroy</li>
-                    <li>Alarmas DSC / Neo / Paradox</li>
+                    <li>Cámaras Hikvision / Dahua</li>
+                    <li>Cercas Eléctricas</li>
+                    <li>Alarmas DSC / Paradox</li>
                 </ul>
                 <a href="seguridad.html" class="btn-ver">Ver Catálogo</a>
             </div>
             <div class="card">
                 <h3>Electricidad</h3>
                 <ul>
-                    <li>Tableros de Distribución</li>
-                    <li>Mantenimiento Preventivo</li>
+                    <li>Tableros de Control</li>
                     <li>Instalaciones Residenciales</li>
+                    <li>Mantenimiento Preventivo</li>
                 </ul>
                 <a href="electricidad.html" class="btn-ver">Ver Catálogo</a>
             </div>
             <div class="card">
-                <h3>Accesos</h3>
-                <ul>
-                    <li>Biometría ZKTeco / Hikvision</li>
-                    <li>Motores de Garaje</li>
-                    <li>Intercomunicadores</li>
-                </ul>
-                <a href="accesos.html" class="btn-ver">Ver Catálogo</a>
-            </div>
-            <div class="card">
                 <h3>Línea Blanca</h3>
                 <ul>
-                    <li>Arreglo y Reparación</li>
-                    <li>Mantenimiento Preventivo</li>
-                    <li>Repuestos Garantizados</li>
+                    <li>Reparación de Lavadoras</li>
+                    <li>Mantenimiento de Cocinas</li>
+                    <li>Repuestos Originales</li>
                 </ul>
                 <a href="lineablanca.html" class="btn-ver">Ver Catálogo</a>
             </div>
             <div class="card">
                 <h3>Sublimación</h3>
                 <ul>
-                    <li>Camisetas Personalizadas</li>
-                    <li>Tazas y Jarros</li>
-                    <li>Gorras y Merchandising</li>
+                    <li>Tazas y Camisetas</li>
+                    <li>Gorras Personalizadas</li>
+                    <li>Publicidad para Negocios</li>
                 </ul>
                 <a href="sublimacion.html" class="btn-ver">Ver Catálogo</a>
             </div>
         </div>
     </section>
 
-    <section style="background: rgba(5, 5, 5, 0.8);">
+    <section>
         <div class="form-container">
-            <h2 style="color: var(--oro); text-align: center; margin-bottom: 25px; font-weight: 800;">Solicitar Presupuesto</h2>
+            <h2 style="color: var(--oro); text-align: center; margin-bottom: 20px;">Presupuesto Gratis</h2>
             <form action="https://formspree.io/f/TU_ID_AQUI" method="POST">
-                <input type="text" name="name" placeholder="Tu Nombre" required>
-                <input type="tel" name="phone" placeholder="WhatsApp (Ej: 096...)" required>
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="tel" name="phone" placeholder="WhatsApp" required>
                 <select name="service">
-                    <option value="CCTV">Cámaras / Seguridad</option>
+                    <option value="Seguridad">Seguridad Electrónica</option>
                     <option value="Electricidad">Electricidad / Domótica</option>
-                    <option value="Accesos">Control de Accesos / Motores</option>
-                    <option value="Diseno">Diseño y Sublimación</option>
+                    <option value="Linea Blanca">Línea Blanca</option>
+                    <option value="Sublimacion">Sublimación / Diseño</option>
                 </select>
-                <textarea name="message" rows="4" placeholder="Cuéntanos sobre tu proyecto o falla técnica..."></textarea>
-                <button type="submit" class="btn-enviar">Enviar Solicitud Ahora</button>
+                <textarea name="message" rows="3" placeholder="¿En qué podemos ayudarte?"></textarea>
+                <button type="submit" class="btn-enviar">Enviar Solicitud</button>
             </form>
         </div>
     </section>
 
-    <section style="background: linear-gradient(45deg, #0a0a0a, #1a1a1a); border: 3px solid #D4AF37; margin: 40px 5%; border-radius: 30px; padding: 50px 20px;">
-        <div style="max-width: 1000px; margin: auto; text-align: center;">
-            <div style="font-size: 5rem; color: #D4AF37; margin-bottom: 20px;">🔓</div>
-            <h2 style="color: #D4AF37; text-transform: uppercase; letter-spacing: 2px; font-size: 1.8rem; font-weight: 900;">Soporte de Desbloqueo</h2>
-            <h3 style="color: #fff; margin-bottom: 30px; font-size: 1.4rem;">¿Olvidaste tu clave de seguridad?</h3>
-            
-            <div style="display: inline-block; text-align: left; margin-bottom: 40px; color: #eee; font-size: 1.1rem;">
-                <p>⚡ Reset de claves Hikvision, Dahua, Paradox.</p>
-                <p>⚡ Desvinculación de cuentas Hik-Connect.</p>
-                <p>⚡ Recuperación total de sistemas DVR/NVR.</p>
-            </div>
-            <br>
-            <a href="https://wa.me/593969425863?text=Hola%20Lions%20S.G.,%20necesito%20ayuda%20con%20el%20desbloqueo/reset%20de%20un%20equipo." 
-               style="background: #D4AF37; color: #000; padding: 20px 40px; text-decoration: none; font-weight: 900; border-radius: 50px; display: inline-block; transition: 0.3s; font-size: 1.1rem; text-transform: uppercase;">
-                SOLICITAR DESBLOQUEO
-            </a>
+    <section>
+        <div class="promo-box">
+            <div style="font-size: 3.5rem; margin-bottom: 10px;">🔓</div>
+            <h2 style="color: var(--oro); font-size: 1.5rem; font-weight: 900;">DESBLOQUEO DE EQUIPOS</h2>
+            <p style="color: #ccc; margin: 15px 0; font-size: 1rem;">Reset de claves y desvinculación de cuentas Hik-Connect / Dahua.</p>
+            <a href="https://wa.me/593969425863" style="text-decoration:none; color:black; background:var(--oro); padding:15px 30px; border-radius:50px; font-weight:bold; display:inline-block;">SOLICITAR AHORA</a>
+        </div>
+
+        <div class="action-buttons">
+            <a href="videos.html" style="background:#ff0000; color:white; padding:15px; border-radius:12px; text-decoration:none; font-weight:bold; text-align:center;">🎥 VIDEOS</a>
+            <a href="manuales.html" style="border:1px solid var(--oro); color:var(--oro); padding:15px; border-radius:12px; text-decoration:none; font-weight:bold; text-align:center;">📚 MANUALES PDF</a>
         </div>
     </section>
 
-    <section style="background: #000; text-align: center; border-top: 2px solid var(--oro);">
-        <p style="color: var(--oro); font-size: 0.8rem; margin-bottom: 40px; letter-spacing: 3px; font-weight: bold;">TECNOLOGÍA RESPALDADA POR</p>
+    <section style="text-align: center;">
         <div class="marcas-flex">
             <span class="marca-tag">HIKVISION</span>
             <span class="marca-tag">DAHUA</span>
-            <span class="marca-tag">IMOU</span>
-            <span class="marca-tag">EZVIZ</span>
             <span class="marca-tag">DSC</span>
-            <span class="marca-tag">NEO</span>
-            <span class="marca-tag">ZKTECO</span>
             <span class="marca-tag">PARADOX</span>
+            <span class="marca-tag">ZKTECO</span>
         </div>
     </section>
 
-    <footer style="padding: 60px 5%; text-align: center; background: #000; border-top: 2px solid var(--oro);">
-        <h3 style="color: var(--oro); font-size: 1.5rem; letter-spacing: 2px;">LIONS S.G. SOLUCIONES TÉCNICAS</h3>
-        <p style="margin: 20px 0; font-weight: bold;">📞 0969425863 | 📍 Quito - Pichincha</p>
-
-        <div style="margin: 25px 0; padding: 15px; background: #0a0a0a; border-radius: 15px; display: inline-block; border: 1px solid #333;">
-            <p style="color: #666; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Visitas Totales</p>
+    <footer>
+        <h3 style="color: var(--oro); font-size: 1.2rem;">LIONS S.G. SOLUCIONES TÉCNICAS</h3>
+        <p style="margin: 15px 0; font-size: 0.9rem;">📞 0969425863 | Quito - Ecuador</p>
+        
+        <div style="margin: 20px 0;">
             <div id="sfcx96mcl3y68uuykyf8n8649u717p7h8x4"></div>
             <script type="text/javascript" src="https://counter10.optistats.ovh/private/counter.js?c=x96mcl3y68uuykyf8n8649u717p7h8x4&down=async" async></script>
         </div>
 
-        <div style="display: flex; justify-content: center; gap: 40px; margin: 40px 0;">
-            <a href="https://www.tiktok.com/@lionssgsoluciones" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" style="width:35px; filter:invert(1);"></a>
-            <a href="https://www.instagram.com/lions_sg_solucionestecnicas" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" style="width:35px; filter:invert(1);"></a>
-            <a href="https://www.facebook.com/share/1dETSA1mcV/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" style="width:35px; filter:invert(1);"></a>
-        </div>
-
-        <p style="font-size: 0.8rem; color: #444; font-weight: bold;">&copy; 2026 LIONS S.G. | Todos los derechos reservados Alex Dario</p>
+        <p style="font-size: 0.7rem; color: #555;">&copy; 2026 Alex Dario | Todos los derechos reservados</p>
     </footer>
 
     <script src="//code.tidio.co/1xzoji2jm1g2zikjvorhihyamkh0jtrl.js" async></script>
-
-
 
 <section style="padding: 20px 5%; text-align: center; display: flex; flex-direction: column; gap: 15px;">
 
@@ -264,6 +325,9 @@
         <span>📚</span> DESCARGAR MANUALES PDF
     </a>
 
-</section>
+
+
+
+
 </body>
 </html>
