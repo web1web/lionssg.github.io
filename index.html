@@ -2,218 +2,99 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIONS S.G. | Soluciones Técnicas - Quito</title>
     <style>
         :root {
             --oro: #D4AF37;
             --oro-br: #FFD700;
             --negro: #000000;
+            --gris-oscuro: #0a0a0a;
             --gris-suave: #111111;
             --blanco: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Segoe UI', Roboto, sans-serif; 
-            background-color: var(--negro); 
-            color: var(--blanco); 
-            line-height: 1.5; 
-            overflow-x: hidden;
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--negro); color: var(--blanco); line-height: 1.6; overflow-x: hidden; }
+
+        /* Estilos de Navegación y Hero */
+        header { padding: 40px 5%; text-align: center; background: linear-gradient(to bottom, #111, #000); border-bottom: 2px solid var(--oro); }
+        .logo-main { max-width: 120px; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
+        h1 { color: var(--oro); font-size: 2rem; letter-spacing: 2px; text-transform: uppercase; }
+        .subtitle { color: #888; font-size: 0.9rem; margin-top: 5px; }
+
+        /* Secciones Generales */
+        section { padding: 60px 5%; border-bottom: 1px solid #1a1a1a; }
+        .section-title { color: var(--oro); text-align: center; font-size: 1.5rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 3px; }
+
+        /* Grid de Tarjetas de Servicio */
+        .grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: auto; }
+        .card { background: var(--gris-suave); padding: 30px; border-radius: 15px; border: 1px solid #222; transition: 0.3s; text-align: center; }
+        .card:hover { border-color: var(--oro); transform: translateY(-5px); }
+        .card h3 { color: var(--oro); margin-bottom: 15px; }
+        .card ul { list-style: none; color: #ccc; font-size: 0.9rem; margin-bottom: 20px; }
+        .card li { margin-bottom: 8px; }
+        .btn-ver { display: inline-block; padding: 10px 25px; background: var(--oro); color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
+        .btn-ver:hover { background: var(--oro-br); }
+
+        /* Testimonios */
+        .testimonios-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; margin: auto; }
+        .testimonio-card { flex: 1; min-width: 300px; max-width: 380px; background: var(--gris-suave); padding: 30px; border-radius: 15px; border-top: 3px solid var(--oro); display: flex; flex-direction: column; justify-content: space-between; }
+        .testimonio-text { color: #eee; font-style: italic; font-size: 0.9rem; margin-bottom: 20px; }
+        .testimonio-autor { color: var(--oro-br); font-weight: bold; font-size: 0.85rem; }
+
+        /* Formulario */
+        .form-container { max-width: 600px; margin: auto; background: var(--gris-suave); padding: 40px; border-radius: 20px; border: 1px solid #222; }
+        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: #000; border: 1px solid #333; color: #fff; border-radius: 8px; }
+        .btn-enviar { width: 100%; padding: 15px; background: var(--oro); color: #000; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; border-radius: 8px; }
+
+        /* Marcas */
+        .marcas-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; opacity: 0.7; align-items: center; }
+        .marca-tag { font-weight: bold; font-size: 1.1rem; color: #ccc; transition: 0.3s; }
+        .marca-tag:hover { color: var(--oro); opacity: 1; }
+
+        /* FORZAR POSICIONES DE BOTONES FLOTANTES */
+        #tidio-chat iframe, #tidio-chat-code iframe, .tidio-chat-iframe {
+            left: 10px !important;
+            right: auto !important;
+            bottom: 20px !important;
         }
 
-        /* MARCA DE AGUA RESPONSIVA */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url('https://web1web.github.io/lionssg.github.io/imagenes/lions-sg-logo.png'); 
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 80% auto;
-            opacity: 0.04; 
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        header { 
-            padding: 40px 20px; 
-            text-align: center; 
-            background: linear-gradient(to bottom, #111, #000); 
-            border-bottom: 2px solid var(--oro); 
-        }
-
-        .logo-main { 
-            width: clamp(150px, 40vw, 220px); 
-            height: auto;
-            margin-bottom: 15px; 
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)); 
-        }
-
-        h1 { 
-            color: var(--oro); 
-            font-size: clamp(1.4rem, 6vw, 2.2rem); 
-            text-transform: uppercase; 
-            font-weight: 900; 
-            line-height: 1.2;
-        }
-
-        .subtitle { color: #888; font-size: clamp(0.8rem, 3vw, 1rem); margin-top: 8px; font-weight: bold; }
-
-        section { padding: 50px 20px; border-bottom: 1px solid #1a1a1a; }
-
-        .section-title { 
-            color: var(--oro); 
-            text-align: center; 
-            font-size: clamp(1.3rem, 5vw, 1.8rem); 
-            margin-bottom: 35px; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-        }
-
-        /* GRID RESPONSIVO */
-        .grid-servicios { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; 
-            max-width: 1200px; 
-            margin: auto; 
-        }
-
-        .card { 
-            background: rgba(17, 17, 17, 0.9); 
-            padding: 30px 20px; 
-            border-radius: 20px; 
-            border: 1px solid #222; 
-            text-align: center; 
-            transition: 0.3s;
-        }
-
-        .card h3 { color: var(--oro); margin-bottom: 15px; font-size: 1.3rem; }
-        .card ul { list-style: none; color: #ccc; font-size: 0.95rem; margin-bottom: 20px; }
-        .card li { margin-bottom: 6px; }
-
-        .btn-ver { 
-            display: inline-block; 
-            padding: 12px 25px; 
-            background: var(--oro); 
-            color: #000; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 50px; 
-            text-transform: uppercase; 
-            font-size: 0.8rem; 
-        }
-
-        /* FORMULARIO ADAPTADO */
-        .form-container { 
-            max-width: 600px; 
-            margin: auto; 
-            background: rgba(17, 17, 17, 0.95); 
-            padding: 30px 20px; 
-            border-radius: 20px; 
-            border: 1px solid #333; 
-        }
-
-        input, select, textarea { 
-            width: 100%; 
-            padding: 12px; 
-            margin-bottom: 12px; 
-            background: #000; 
-            border: 1px solid #444; 
-            color: #fff; 
-            border-radius: 8px; 
-            font-size: 1rem; 
-        }
-
-        .btn-enviar { 
-            width: 100%; 
-            padding: 15px; 
-            background: var(--oro); 
-            color: #000; 
-            border: none; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            border-radius: 8px; 
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        /* BLOQUE DESBLOQUEO RESPONSIVO */
-        .promo-box {
-            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
-            border: 2px solid var(--oro);
-            margin: 20px 0;
-            border-radius: 25px;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        /* MARCAS FLEXIBLES */
-        .marcas-flex { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 15px; 
-            opacity: 0.7; 
-        }
-
-        .marca-tag { font-weight: bold; font-size: 0.9rem; color: #777; }
-
-        /* SOPORTE FLOTANTE (ADAPTADO PARA MÓVIL) */
         .boton-soporte-final {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            left: auto !important;
             background: #25d366;
             color: white;
-            padding: 12px 20px;
+            padding: 12px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            z-index: 999999 !important;
             border: 2px solid #fff;
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: 0.3s;
         }
-
-        /* BOTONES DE ACCIÓN RÁPIDA */
-        .action-buttons {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        @media (min-width: 600px) {
-            .action-buttons { grid-template-columns: 1fr 1fr; }
-        }
-
-        footer { padding: 40px 20px; text-align: center; border-top: 2px solid var(--oro); }
-
-        /* Ajuste para que Tidio no tape el botón de soporte en móvil */
-        #tidio-chat iframe { 
-            bottom: 10px !important; 
-            right: 10px !important; 
-        }
+        .boton-soporte-final:hover { transform: scale(1.05); background: #1ebe57; }
     </style>
 </head>
 <body>
 
     <a href="https://wa.me/593969425863?text=Hola%20Lions%20S.G.,%20necesito%20soporte%20técnico%20urgente." class="boton-soporte-final">
-        <span>🛠️</span> Soporte
+        <span>🛠️</span> Soporte Técnico
     </a>
 
-    <header>
+
+        <header>
         <img src="https://web1web.github.io/lionssg.github.io/imagenes/lions-sg-logo.png" alt="Lions S.G. Logo" class="logo-main">
         <h1>Lions S.G. Soluciones Técnicas</h1>
-        <p class="subtitle">Seguridad Electrónica & Eléctrica | Quito</p>
+        <p class="subtitle">Seguridad Electrónica & Eléctrica | Quito - Pichincha</p>
     </header>
+
 
     <section id="servicios">
         <h2 class="section-title">Nuestros Servicios</h2>
@@ -221,97 +102,213 @@
             <div class="card">
                 <h3>Seguridad Electrónica</h3>
                 <ul>
-                    <li>Cámaras Hikvision / Dahua</li>
-                    <li>Cercas Eléctricas</li>
-                    <li>Alarmas DSC / Paradox</li>
+                    <li>Hikvision / Dahua / Imou</li>
+                    <li>Cercas Eléctricas JFL / Hagroy</li>
+                    <li>Alarmas DSC / Neo / Paradox</li>
                 </ul>
                 <a href="seguridad.html" class="btn-ver">Ver Catálogo</a>
             </div>
             <div class="card">
                 <h3>Electricidad</h3>
                 <ul>
-                    <li>Tableros de Control</li>
-                    <li>Instalaciones Residenciales</li>
+                    <li>Tableros de Distribución</li>
                     <li>Mantenimiento Preventivo</li>
+                    <li>Instalaciones Residenciales</li>
                 </ul>
                 <a href="electricidad.html" class="btn-ver">Ver Catálogo</a>
             </div>
             <div class="card">
-                <h3>Línea Blanca</h3>
+                <h3>Accesos</h3>
                 <ul>
-                    <li>Reparación de Lavadoras</li>
-                    <li>Mantenimiento de Cocinas</li>
-                    <li>Repuestos Originales</li>
+                    <li>Biometría ZKTeco / Hikvision</li>
+                    <li>Motores de Garaje</li>
+                    <li>Intercomunicadores</li>
+                </ul>
+                <a href="accesos.html" class="btn-ver">Ver Catálogo</a>
+            </div>
+            <div class="card">
+                <h3>Linea Blanca</h3>
+                <ul>
+                    <li>Arreglo</li>
+                    <li>Mantenimiento Preventivo</li>
+                    <li>Repuestos</li>
                 </ul>
                 <a href="lineablanca.html" class="btn-ver">Ver Catálogo</a>
-            </div>
+</div>
             <div class="card">
                 <h3>Sublimación</h3>
                 <ul>
-                    <li>Tazas y Camisetas</li>
-                    <li>Gorras Personalizadas</li>
-                    <li>Publicidad para Negocios</li>
+                    <li>Camisetas Personalizadas</li>
+                    <li>Tazas y Jarros</li>
+                    <li>Gorras y Merchandising</li>
                 </ul>
                 <a href="sublimacion.html" class="btn-ver">Ver Catálogo</a>
             </div>
         </div>
     </section>
 
-    <section>
+    <section style="background: #050505;">
         <div class="form-container">
-            <h2 style="color: var(--oro); text-align: center; margin-bottom: 20px;">Presupuesto Gratis</h2>
+            <h2 style="color: var(--oro); text-align: center; margin-bottom: 20px;">Solicitar Presupuesto</h2>
             <form action="https://formspree.io/f/TU_ID_AQUI" method="POST">
-                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="text" name="name" placeholder="Tu Nombre" required>
                 <input type="tel" name="phone" placeholder="WhatsApp" required>
                 <select name="service">
-                    <option value="Seguridad">Seguridad Electrónica</option>
-                    <option value="Electricidad">Electricidad / Domótica</option>
-                    <option value="Linea Blanca">Línea Blanca</option>
-                    <option value="Sublimacion">Sublimación / Diseño</option>
+                    <option value="CCTV">Cámaras / Seguridad</option>
+                    <option value="Electricidad">Electricidad</option>
+                    <option value="Accesos">Control de Accesos</option>
+                    <option value="Diseno">Diseño y Sublimación</option>
                 </select>
-                <textarea name="message" rows="3" placeholder="¿En qué podemos ayudarte?"></textarea>
+                <textarea name="message" rows="4" placeholder="Detalles de tu proyecto..."></textarea>
                 <button type="submit" class="btn-enviar">Enviar Solicitud</button>
             </form>
         </div>
     </section>
 
     <section>
-        <div class="promo-box">
-            <div style="font-size: 3.5rem; margin-bottom: 10px;">🔓</div>
-            <h2 style="color: var(--oro); font-size: 1.5rem; font-weight: 900;">DESBLOQUEO DE EQUIPOS</h2>
-            <p style="color: #ccc; margin: 15px 0; font-size: 1rem;">Reset de claves y desvinculación de cuentas Hik-Connect / Dahua.</p>
-            <a href="https://wa.me/593969425863" style="text-decoration:none; color:black; background:var(--oro); padding:15px 30px; border-radius:50px; font-weight:bold; display:inline-block;">SOLICITAR AHORA</a>
-        </div>
-
-        <div class="action-buttons">
-            <a href="videos.html" style="background:#ff0000; color:white; padding:15px; border-radius:12px; text-decoration:none; font-weight:bold; text-align:center;">🎥 VIDEOS</a>
-            <a href="manuales.html" style="border:1px solid var(--oro); color:var(--oro); padding:15px; border-radius:12px; text-decoration:none; font-weight:bold; text-align:center;">📚 MANUALES PDF</a>
+        <h2 class="section-title">Clientes Satisfechos</h2>
+        <div class="testimonios-container">
+            <div class="testimonio-card">
+                <p class="testimonio-text">"Excelente instalación de cámaras. Monitoreo remoto perfecto en Quito."</p>
+                <div>
+                    <div class="testimonio-autor">Ing. Ricardo M.</div>
+                    <div style="color: #444; font-size: 0.7rem;">Cumbayá</div>
+                </div>
+            </div>
+            <div class="testimonio-card">
+                <p class="testimonio-text">"Instalaron el cerco eléctrico y alarma Neo. Muy profesionales."</p>
+                <div>
+                    <div class="testimonio-autor">Lucía Carrera</div>
+                    <div style="color: #444; font-size: 0.7rem;">Centro Norte</div>
+                </div>
+            </div>
+            <div class="testimonio-card">
+                <p class="testimonio-text">"Soporte técnico rápido para mis tableros eléctricos. Recomendados."</p>
+                <div>
+                    <div class="testimonio-autor">Juan Rodríguez</div>
+                    <div style="color: #444; font-size: 0.7rem;">Valle de los Chillos</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section style="text-align: center;">
+    <section style="background: linear-gradient(145deg, #0a0a0a, #111); text-align: center;">
+        <div style="max-width: 800px; margin: auto; border: 1px dashed var(--oro); padding: 30px; border-radius: 15px;">
+            <h3 style="color: var(--oro); text-transform: uppercase; margin-bottom: 15px;">🏗️ Plataforma en Actualización</h3>
+            <p style="color: #ccc; font-size: 0.9rem;">Muy pronto habilitaremos Catálogos PDF 2026 y Galería de Proyectos.</p>
+            <a href="proyectos.html" style="background: var(--oro); color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px;">
+                Ver Galería Real
+            </a>
+        </div>
+    </section>
+
+    <section style="background: #050505; text-align: center;">
+        <p style="color: var(--oro); font-size: 0.7rem; margin-bottom: 30px; letter-spacing: 2px;">TECNOLOGÍA RESPALDADA POR</p>
         <div class="marcas-flex">
             <span class="marca-tag">HIKVISION</span>
             <span class="marca-tag">DAHUA</span>
+            <span class="marca-tag">IMOU</span>
+            <span class="marca-tag">EZVIZ</span>
             <span class="marca-tag">DSC</span>
-            <span class="marca-tag">PARADOX</span>
+            <span class="marca-tag">NEO</span>
+            <span class="marca-tag">HAGROY</span>
             <span class="marca-tag">ZKTECO</span>
+            <span class="marca-tag">JFL</span>
+            <span class="marca-tag">PARADOX</span>
         </div>
     </section>
 
-    <footer>
-        <h3 style="color: var(--oro); font-size: 1.2rem;">LIONS S.G. SOLUCIONES TÉCNICAS</h3>
-        <p style="margin: 15px 0; font-size: 0.9rem;">📞 0969425863 | Quito - Ecuador</p>
-        
-        <div style="margin: 20px 0;">
+        <footer style="padding: 60px 5%; text-align: center; background: #000; border-top: 2px solid var(--oro);">
+        <h3 style="color: var(--oro);">LIONS S.G. SOLUCIONES TÉCNICAS</h3>
+        <p style="margin: 15px 0;">📞 0969425863 | 📍 Quito - Pichincha</p>
+
+        <div style="margin: 25px 0; padding: 10px; background: #0a0a0a; border-radius: 10px; display: inline-block; border: 1px solid #1a1a1a;">
+            <p style="color: #666; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Visitas Totales</p>
             <div id="sfcx96mcl3y68uuykyf8n8649u717p7h8x4"></div>
             <script type="text/javascript" src="https://counter10.optistats.ovh/private/counter.js?c=x96mcl3y68uuykyf8n8649u717p7h8x4&down=async" async></script>
         </div>
 
-        <p style="font-size: 0.7rem; color: #555;">&copy; 2026 Alex Dario | Todos los derechos reservados</p>
+        <div style="display: flex; justify-content: center; gap: 30px; margin: 30px 0;">
+            <a href="https://www.tiktok.com/@lionssgsoluciones" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" style="width:30px; filter:invert(1);"></a>
+            <a href="https://www.instagram.com/lions_sg_solucionestecnicas" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" style="width:30px; filter:invert(1);"></a>
+            <a href="https://www.facebook.com/share/1dETSA1mcV/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" style="width:30px; filter:invert(1);"></a>
+        </div>
+
+        <p style="font-size: 0.7rem; color: #444;">&copy; 2026 LIONS S.G. | Todos los derechos reservados Alex Dario</p>
     </footer>
 
     <script src="//code.tidio.co/1xzoji2jm1g2zikjvorhihyamkh0jtrl.js" async></script>
+
+<style>
+    /* FORZAR SOPORTE TÉCNICO A LA IZQUIERDA */
+    .boton-soporte-final {
+        position: fixed !important;
+        bottom: 20px !important;
+        left: 20px !important;
+        right: auto !important;
+        z-index: 999999 !important; /* Siempre al frente */
+    }
+
+    /* FORZAR CHAT DE IA (TIDIO) A LA DERECHA */
+    #tidio-chat iframe, 
+    #tidio-chat-code iframe, 
+    .tidio-chat-iframe {
+        right: 10px !important;
+        left: auto !important;
+        bottom: 20px !important;
+        display: block !important;
+    }
+
+    /* Ajuste para móviles: evitar que se peguen demasiado al borde */
+    @media (max-width: 480px) {
+        .boton-soporte-final { bottom: 15px !important; left: 10px !important; padding: 10px 18px !important; font-size: 0.8rem; }
+        #tidio-chat iframe { bottom: 10px !important; right: 5px !important; }
+    }
+</style>
+
+
+
+
+
+<section style="background: linear-gradient(45deg, #0a0a0a, #1a1a1a); border: 2px solid #D4AF37; margin: 20px 5%; border-radius: 20px; padding: 30px 20px;">
+    <div style="max-width: 1000px; margin: auto; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center;">
+
+        <div style="width: 100%;">
+            <div style="font-size: clamp(3rem, 10vw, 4.5rem); color: #D4AF37; filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));">
+                🔓
+            </div>
+        </div>
+
+        <div style="width: 100%;">
+            <h2 style="color: #D4AF37; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; font-size: 1.1rem;">Soporte Técnico Especializado</h2>
+            <h3 style="color: #fff; margin-bottom: 20px; font-size: clamp(1.2rem, 5vw, 1.5rem);">¿Perdiste el acceso a tus equipos?</h3>
+
+            <ul style="list-style: none; color: #ccc; margin-bottom: 30px; text-align: left; display: inline-block;">
+                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem;">
+                    <span style="color: #D4AF37;">✔</span> Desbloqueo de DVRs, NVRs y Cámaras IP.
+                </li>
+                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem;">
+                    <span style="color: #D4AF37;">✔</span> Reset de claves (Hikvision, Dahua, Paradox, JFL).
+                </li>
+                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem;">
+                    <span style="color: #D4AF37;">✔</span> Desvinculación de cuentas (Hik-Connect / DMSS).
+                </li>
+                <li style="margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem;">
+                    <span style="color: #D4AF37;">✔</span> Recuperación de sistemas de alarma.
+                </li>
+            </ul>
+
+            <a href="https://wa.me/593969425863?text=Hola%20Lions%20S.G.,%20necesito%20ayuda%20con%20el%20desbloqueo/reset%20de%20un%20equipo." 
+               style="background: #D4AF37; color: #000; padding: 15px 20px; text-decoration: none; font-weight: bold; border-radius: 8px; display: block; max-width: 300px; margin: 0 auto; transition: 0.3s; font-size: 0.9rem; text-transform: uppercase;"
+               onmouseover="this.style.background='#FFD700'" onmouseout="this.style.background='#D4AF37'">
+                SOLICITAR DESBLOQUEO AHORA
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
 
 <section style="padding: 20px 5%; text-align: center; display: flex; flex-direction: column; gap: 15px;">
 
@@ -325,9 +322,12 @@
         <span>📚</span> DESCARGAR MANUALES PDF
     </a>
 
-
+</section>
 
 
 
 </body>
 </html>
+
+
+Agranda  el tamaño de logo , adaptando al los celulares sin eliminar nada de la web
