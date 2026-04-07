@@ -167,6 +167,10 @@
             font-size: 1.5rem;
             letter-spacing: 5px;
             border: 2px solid var(--oro);
+            background: #111;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
         }
 
         /* SOPORTE FLOTANTE */
@@ -237,7 +241,7 @@
         <div id="techContent" style="display:none; flex-direction:column; height:100%;">
             <div class="modal-tech-header">
                 <span style="color:var(--oro); font-weight:bold;">SISTEMA LIONS v2.6</span>
-                <button onclick="cerrarTech()" style="background:red; color:white; border:none; padding:8px 15px; border-radius:5px; font-weight:bold;">CERRAR</button>
+                <button onclick="cerrarTech()" style="background:red; color:white; border:none; padding:8px 15px; border-radius:5px; font-weight:bold; cursor:pointer;">CERRAR</button>
             </div>
             
             <div class="tech-tabs">
@@ -267,11 +271,11 @@
 
         function validarTech() {
             const pass = document.getElementById('techPass').value;
-            if(pass === 'Lions2026') { // CONTRASEÑA TÉCNICA
+            if(pass === 'Lions2026') { 
                 document.getElementById('techLogin').style.display = 'none';
                 document.getElementById('techContent').style.display = 'flex';
             } else {
-                alert('Acceso Denegado');
+                alert('Acceso Denegado: Código Incorrecto');
             }
         }
 
@@ -292,7 +296,7 @@
     </script>
 
     <section style="background: #050505;">
-        <div class="form-container">
+        <div class="form-container" style="max-width: 600px; margin: auto; padding: 20px;">
             <h2 style="color: var(--oro); text-align: center; margin-bottom: 20px;">Solicitar Presupuesto</h2>
             </div>
     </section>
